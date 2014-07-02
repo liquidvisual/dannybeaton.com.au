@@ -29,10 +29,10 @@ module.exports = function (grunt) {
       // JEKYLL
       //-----------------------------------------------------
       shell: {
-         jekyllBuild: {
-            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %>"
+        jekyllServe: {
+            command: "jekyll build --source <%= config.app %>  --destination .tmp"
          },
-         jekyllDeploy: {
+         jekyllBuild: {
             command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config _config.deploy.yml"
          }
       },
@@ -65,18 +65,29 @@ module.exports = function (grunt) {
       // SASS - Compiles sass only, leaves .css alone
       //-----------------------------------------------------
       sass: {
-         dist: {
-            options: {
-               style: 'compressed'
-            },
-            files: [{
-               expand: true,
-               cwd: '<%= config.app %>/_scss',
-               src: '**/*.{scss,sass}',
-               dest: '<%= config.dist %>/css',
-               ext: '.css'
-            }]
-         }
+        options: {
+          debugInfo: false,
+          lineNumbers: false,
+          style: 'compressed'
+        },
+         temp: {
+          files: [{
+            expand: true,
+            cwd: '<%= config.app %>/_scss',
+            src: '**/*.{scss,sass}',
+            dest: '.tmp/css',
+            ext: '.css'
+          }]
+        },
+        dist: {
+          files: [{
+            expand: true,
+            cwd: '<%= config.app %>/_scss',
+            src: '**/*.{scss,sass}',
+            dest: '<%= config.dist %>/css',
+            ext: '.css'
+          }]
+        }
       },
       //-----------------------------------------------------
       // A. CONNECT
@@ -90,7 +101,7 @@ module.exports = function (grunt) {
          livereload: {
             options: {
                open: true,
-               base: '<%= config.dist %>'
+               base: '.tmp'
             }
          },
          dist: {
@@ -108,7 +119,7 @@ module.exports = function (grunt) {
 
          sass: {
             files: ['<%= config.app %>/_scss/**/*.{scss,sass}'],
-            tasks: ['sass'],
+            tasks: ['sass:temp'],
             options : {
                spawn: false,
                livereload: true
@@ -133,7 +144,7 @@ module.exports = function (grunt) {
                 '<%= config.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
                 //'!<%= config.app %>/**/_s/**'
             ],
-            tasks: ['shell:jekyllBuild', 'sass']
+            tasks: ['shell:jekyllServe', 'sass:temp']
          }
       }
    //-- end initConfig
@@ -142,25 +153,25 @@ module.exports = function (grunt) {
    // Register Tasks
    //-----------------------------------------------------
    grunt.registerTask('serve', [
-      'shell:jekyllBuild',
-      'sass',
+      'shell:jekyllServe',
+      'sass:temp',
       'connect:livereload',
       'watch'
    ]);
 
    // Build only
    grunt.registerTask('deploy', [
-      'shell:jekyllDeploy',
-      'sass',
+      'shell:jekyllBuild',
+      'sass:dist',
       'buildcontrol:master',
       'buildcontrol:pages'
    ]);
 
    // Build only
-   grunt.registerTask('default', [
-      'shell:jekyllBuild',
-      'sass'
-   ]);
+   // grunt.registerTask('default', [
+   //    'shell:jekyllBuild',
+   //    'sass'
+   // ]);
 
 //-- end module.exports
 };

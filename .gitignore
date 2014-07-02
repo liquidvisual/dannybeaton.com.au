@@ -2,7 +2,6 @@ libs
 _site
 obsolete
 node_modules
-Icon^M^M
 .DS_Store
 .sass-cache
 .tmp
