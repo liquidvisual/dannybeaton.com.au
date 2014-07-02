@@ -46,7 +46,8 @@ module.exports = function (grunt) {
         master: {
           options: {
             remote: 'git@github.com:liquidvisual/dannybeaton.com.au.git',
-            branch: 'master'
+            branch: 'master',
+            connectCommits: true
           }
         }
       },
