@@ -1,0 +1,20 @@
+{
+  "name": "liquidvisual",
+  "version": "0.0.1",
+  "main": [
+    "css/liquidvisual.css",
+    "js/liquidvisual.js"
+  ],
+  "dependencies": {
+    "animate.css": ">=3.1.1",
+    "bxSlider": "4.1.2",
+    "foundation": ">=5.2.3",
+    "foundation-icon-fonts": "zurb/foundation-icon-fonts",
+    "jquery.scrollTo": "1.4.12",
+    "magnific-popup": "0.9.9",
+    "WOW": "0.1.9",
+    "nprogress": "~0.1.6"
+  },
+  "devDependencies": {},
+  "private": false
+}

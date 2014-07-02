@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>       <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if lt IE 9]>       <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>          <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Liquid Visual :: Styleguide</title>
+	<base href="../">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="libs/foundation/css/foundation.css">
+	<link rel="stylesheet" href="libs/foundation-icon-fonts/foundation-icons.css">
+	<link rel="stylesheet" href="libs/animate.css/animate.min.css">
+	<link rel="stylesheet" href="css/liquidvisual.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!-- Priority Scripts -->
+	<script src="libs/modernizr/modernizr.js"></script>
+	<script src="http://localhost:48626/takana.js"></script>
+</head>
+<body>
+	<div class="lv-super developerX">
+		<div class="lv-page">
+
+		<!-- ************************************************************************************** -->
+
+		<!-- ************************************************************************************** -->
+
+		<div class="row">
+	<div class="medium-11 medium-centered large-8 columns">
+
+		<!-- Stylesheet -->
+
+		<!-- <link rel="stylesheet" href="{{site.baseurl}}/bower_components/liquidvisual-framework/scss/vendor/styleguide.css"> -->
+		<link rel="stylesheet" href="{{site.baseurl}}/bower_components/liquidvisual-framework/scss/vendor/prism.css">
+		<script src="{{site.baseurl}}/bower_components/liquidvisual-framework/js/vendor/prism.min.js"></script>
+
+		<!-- Begin -->
+
+		<p class="lead">This document is a guide to the mark-up styles used throughout the site. Pointing the special compiled <b>wysiwyg.css</b> file to rich text editors will work in most CMS systems.</p>
+
+		<p>Rich text editor classes (those that the user selects in the style dropdown) are catalogued at the top of <a href="static/css/liquidvisual/wysiwyg.css">wysiwyg.css</a> for your convenience.</p>
+
+		<!-- Colors -->
+
+		<h2 class="sg-heading">Color Palette</h2>
+
+		<section class="section sg-sectionx sg-color-section">
+
+			<ul class="sg-color-swatches small-block-grid-2 medium-block-grid-3 large-block-grid-5">
+				<li>
+					<div class="sg-swatch">
+						<div class="sg-swatch-color">
+							<span class="sg-swatch-color-mini-1"></span>
+							<span class="sg-swatch-color-mini-2"></span>
+							<span class="sg-swatch-color-mini-3"></span>
+						</div>
+						<span class="text cursive">gradient</span>
+					</div>
+				</li>
+				<li>
+					<div class="sg-swatch">
+						<div class="sg-swatch-color">
+							<span class="sg-swatch-color-mini-1"></span>
+							<span class="sg-swatch-color-mini-2"></span>
+							<span class="sg-swatch-color-mini-3"></span>
+						</div>
+						<span class="text cursive">#EF2163</span>
+					</div>
+				</li>
+				<li>
+					<div class="sg-swatch">
+						<div class="sg-swatch-color">
+							<span class="sg-swatch-color-mini-1"></span>
+							<span class="sg-swatch-color-mini-2"></span>
+							<span class="sg-swatch-color-mini-3"></span>
+						</div>
+						<span class="text cursive">#EF2163</span>
+					</div>
+				</li>
+				<li>
+					<div class="sg-swatch">
+						<div class="sg-swatch-color">
+							<span class="sg-swatch-color-mini-1"></span>
+							<span class="sg-swatch-color-mini-2"></span>
+							<span class="sg-swatch-color-mini-3"></span>
+						</div>
+						<span class="text cursive">#EF2163</span>
+					</div>
+				</li>
+				<li>
+					<div class="sg-swatch">
+						<div class="sg-swatch-color">
+							<span class="sg-swatch-color-mini-1"></span>
+							<span class="sg-swatch-color-mini-2"></span>
+							<span class="sg-swatch-color-mini-3"></span>
+						</div>
+						<span class="text cursive">#EF2163</span>
+					</div>
+				</li>
+			</ul>
+
+		</section> <!-- .sg-section -->
+
+		<!-- Headings -->
+
+		<h2 class="sg-heading">Headings</h2>
+
+		<section class="section sg-section">
+
+			<p>The main page header of this guide <em>'styleguide'</em> is an <code>h1</code> element. Any header elements may include links and <code>small</code> elements.</p>
+
+			<div class="row">
+				<div class="medium-6 columns">
+					<h1>H1 Heading</h1>
+					<h2>H2 Heading</h2>
+					<h3>H3 Heading</h3>
+					<h4>H4 Heading</h4>
+					<h5>H5 Heading</h5>
+					<h6>H6 Heading</h6>
+				</div>
+				<div class="medium-6 columns">
+					<h1 class="subheader">H1.subheading</h1>
+					<h2 class="subheader">H2.subheading</h2>
+					<h3 class="subheader">H3.subheading</h3>
+					<h4 class="subheader">H4.subheading</h4>
+					<h5 class="subheader">H5.subheading</h5>
+					<h6 class="subheader">H6.subheading</h6>
+				</div>
+			</div>
+
+		</section> <!-- .sg-section -->
+
+		<!-- Paragraphs -->
+
+		<h2 class="sg-heading">Paragraphs</h2>
+
+		<section class="section sg-section">
+
+			<p class="lead">This is a leading paragraph. It's slightly larger than normal. Apply the class of <b>lead</b> to any <code>p</code> element. For example: <code>&lt;p class="lead"&gt;...&lt;/p&gt;</code></p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet pariatur eos in illo esse quaerat quibusdam obcaecati. Numquam, eos, error, distinctio non animi veniam libero fugiat illo dolores quidem eum ratione inventore earum officia quae. Quidem, id, tempore nemo aspernatur commodi nulla excepturi vel nisi sequi</p>
+
+			<p>veritatis itaque possimus officia nam. Nemo, obcaecati, quam nisi delectus recusandae perspiciatis ea debitis accusantium neque unde hic accusamus dignissimos quo molestiae soluta et excepturi. Possimus, voluptate fuga esse sint nesciunt natus voluptatum placeat</p>
+
+		</section> <!-- .sg-section -->
+
+		<!-- Lists -->
+
+		<h2 class="sg-heading">Lists</h2>
+
+		<section class="section sg-section">
+
+			<h3>Unordered List</h3>
+
+
+			<div class="example">
+			    <ul>
+			        <li>
+			            United Kingdom of Great Britain and Northern Ireland:
+			            <ul>
+			                <li>England</li>
+			                <li>Scotland</li>
+			                <li>Wales</li>
+			                <li>Northern Ireland</li>
+			            </ul>
+			        </li>
+			        <li>Republic of Ireland</li>
+			        <li>Isle of Man</li>
+			        <li>
+			            Channel Islands:
+			            <ul>
+			                <li>Bailiwick of Guernsey</li>
+			                <li>Bailiwick of Jersey</li>
+			            </ul>
+			        </li>
+			    </ul>
+			</div> <!-- .example -->
+
+			<h3>Ordered list</h3>
+
+			<div class="example">
+			   <ol>
+			       <li>This is an ordered list.</li>
+			       <li>
+			           This is the second item, which contains a sub list
+			           <ol>
+			               <li>This is the sub list, which is also ordered.</li>
+			               <li>It has two items.</li>
+			           </ol>
+			       </li>
+			   	<li>This is the final item on this list.</li>
+			   </ol>
+				</div>
+
+		</section> <!-- .sg-section -->
+
+		<!-- Tables -->
+
+		<h2 class="sg-heading">Tables</h2>
+
+		<section class="section sg-section">
+
+			<p>Tables should be used when displaying tabular data. The <code>thead</code>, <code>tfoot</code> and <code>tbody</code> elements enable you to group rows within each a table.</p>
+
+			<p>If you use these elements, you must use every element. They should appear in this order: <code>thead</code>, <code>tfoot</code> and <code>tbody</code>, so that browsers can render the foot before receiving all the data. You must use these tags within the table element.</p>
+
+			<div class="example">
+			  <table>
+			  	<caption>The Very Best Eggnog</caption>
+			  	<thead>
+			  		<tr>
+			  		<th scope="col">Ingredients</th>
+			  		<th scope="col">Serves 12</th>
+			  		<th scope="col">Serves 24</th>
+			  	</tr>
+			  	</thead>
+			  	<tbody>
+			  		<tr>
+			  			<td>Milk</td>
+			  			<td>1 quart</td>
+			  			<td>2 quart</td>
+			  		</tr>
+			  		<tr>
+			  			<td>Cinnamon Sticks</td>
+			  			<td>2</td>
+			  			<td>1</td>
+			  		</tr>
+			  		<tr>
+			  			<td>Vanilla Bean, Split</td>
+			  			<td>1</td>
+			  			<td>2</td>
+			  		</tr>
+			  		<tr>
+			  			<td>Cloves</td>
+			  			<td>5</td>
+			  			<td>10</td>
+			  		</tr>
+			  		<tr>
+			  			<td>Mace</td>
+			  			<td>10 blades</td>
+			  			<td>20 blades</td>
+			  		</tr>
+			  	</tbody>
+			  </table>
+			</div>
+
+
+			<pre class="collapsed" rel="Html">
+				<code class="language-markup">
+{% highlight html %}
+<table>
+	<caption>The Very Best Eggnog</caption>
+	<thead>
+		<tr>
+		<th scope="col">Ingredients</th>
+		<th scope="col">Serves 12</th>
+		<th scope="col">Serves 24</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Milk</td>
+			<td>1 quart</td>
+			<td>2 quart</td>
+		</tr>
+		<tr>
+			<td>Cinnamon Sticks</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Vanilla Bean, Split</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Cloves</td>
+			<td>5</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Mace</td>
+			<td>10 blades</td>
+			<td>20 blades</td>
+		</tr>
+	</tbody>
+</table>
+{% endhighlight %}
+				</code>
+			</pre>
+		</section> <!-- .sg-section -->
+
+	</div> <!-- .medium-11 -->
+</div> <!-- .row -->
+
+		<!-- ************************************************************************************** -->
+		</div> <!-- .lv-page -->
+	</div> <!-- .lv-super -->
+
+	<!-- ***** JAVASCRIPT ***** -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/fastclick/lib/fastclick.js"></script>
+	<script src="libs/jquery-placeholder/jquery.placeholder.js"></script>
+	<script src="libs/jquery.nprogress/js/nprogress.js"></script>
+	<script src="libs/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+	<script src="libs/WOW/dist/wow.min.js"></script>
+	<script src="libs/bxSlider/jquery.bxslider.min.js"></script>
+	<script src="libs/foundation/js/foundation/foundation.js"></script>
+	<script src="libs/foundation/js/foundation/foundation.abide.js"></script>
+	<!-- <script src="libs/foundation/js/foundation/foundation.accordian.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.alert.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.clearing.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.dropdown.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.equalizer.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.interchange.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.joyride.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.magellan.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.offcanvas.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.reveal.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.slider.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.tab.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.tooltip.js"></script> -->
+	<!-- <script src="libs/foundation/js/foundation/foundation.topbar.js"></script> -->
+	<script src="js/liquidvisual/liquidvisual.topbar.js"></script>
+	<script src="js/main.js"></script>
+	<script>$(document).foundation();</script>
+	<!-- No Javascript Warning -->
+	<noscript>
+	<div class="lv-notification">
+		<p>Your browser has Javascript disabled. Some features may be limited.</p>
+		<span class="lv-notification-button">&times;</span>
+	</div>
+	</noscript>
+	</body>
+	</html>
