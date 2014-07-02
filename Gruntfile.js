@@ -30,7 +30,10 @@ module.exports = function (grunt) {
       //-----------------------------------------------------
       shell: {
          jekyllBuild: {
-            command: 'jekyll build --source <%= config.app %>  --destination <%= config.dist %>'
+            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %>"
+         },
+         jekyllDeploy: {
+            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config _config.deploy.yml"
          }
       },
       //-----------------------------------------------------
@@ -147,7 +150,10 @@ module.exports = function (grunt) {
 
    // Build only
    grunt.registerTask('deploy', [
-      'buildcontrol:master'
+      'shell:jekyllDeploy',
+      'sass',
+      'buildcontrol:master',
+      'buildcontrol:pages'
    ]);
 
    // Build only
