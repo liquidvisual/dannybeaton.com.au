@@ -147,7 +147,8 @@ module.exports = function (grunt) {
 
    // Build only
    grunt.registerTask('deploy', [
-      'buildcontrol:master'
+      'buildcontrol:master',
+      'buildcontrol:pages'
    ]);
 
    // Build only
