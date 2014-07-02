@@ -39,15 +39,14 @@ module.exports = function (grunt) {
         options: {
           dir: './',
           commit: true,
-          connectCommits: true,
+          connectCommits: false,
           push: true,
           message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
         },
         master: {
           options: {
             remote: 'git@github.com:liquidvisual/dannybeaton.com.au.git',
-            branch: 'master',
-            connectCommits: true
+            branch: 'master'
           }
         }
       },
