@@ -1,0 +1,54 @@
+/*
+	LIQUIDVISUAL TOPBAR :: STATE
+
+    - Last updated: 14.05.14
+	- liquidvisual.com
+	- Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// is-liquid State
+//-----------------------------------------------------------------
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar ul.is-liquid
+	{
+		width: 100%;
+		display: table;
+		table-layout: $topbar-liquid-state-table-layout;
+		text-align: center;
+
+		> li
+		{
+			display: table-cell;
+		}
+
+		> li,
+		> li a
+		{
+			float: none;
+		}
+
+		> li > a
+		{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// @group | has-logo-for-medium State
+//
+// Logo and title are hidden on medium screens by default
+//-----------------------------------------------------------------
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar.has-logo-for-medium .lv-topbar-header
+	{
+		display: block;
+		float: left;
+	}
+}

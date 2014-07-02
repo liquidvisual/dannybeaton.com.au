@@ -1,0 +1,186 @@
+/*
+	LIQUIDVISUAL TOPBAR :: BODY
+
+    - Last updated: 25.06.14
+	- liquidvisual.com
+	- Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// Topbar
+//-----------------------------------------------------------------
+
+.lv-topbar
+{
+	background: $topbar-background-small;
+	font-size: 1em;
+	visibility: hidden;
+
+	&.is-loaded
+	{
+		visibility: visible;
+	}
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		background: $topbar-background-medium;
+	}
+}
+
+//-----------------------------------------------------------------
+// Topbar Body (Wrapper)
+//-----------------------------------------------------------------
+
+.lv-topbar-body
+{
+	display: none;
+	border-top: $topbar-body-border-top;
+	overflow-y: scroll;
+	max-height: $topbar-body-max-height;
+	-webkit-overflow-scrolling: touch;
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		display: block !important; /* override jQuery "display:none" */
+		border: 0;
+		overflow-y: visible;
+		max-height: none;
+	}
+}
+
+//-----------------------------------------------------------------
+// Unordered Lists
+//-----------------------------------------------------------------
+
+.lv-topbar ul
+{
+	float: none; /* important override */
+	margin: 0; /* failsafe */
+	padding: 0; /* failsafe */
+	list-style: none; /* failsafe */
+	font-size: 1em; /* reset list typography */
+}
+
+//-----------------------------------------------------------------
+// List Mobile Menu Items
+//-----------------------------------------------------------------
+
+.lv-topbar li
+{
+	/* Targeting only menu anchors */
+
+	a
+	{
+		display: block; /* stack anchors for menu */
+		border-top: $topbar-anchor-border-top;
+		line-height: 1.5; /* opinionated */
+		padding: 10px 40px 10px 15px; /* 40px - for dodging close button */
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		br
+		{
+			display: none; /* feature */
+		}
+	}
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		//display: inline-block; need?
+		float: left;
+	}
+}
+
+//-----------------------------------------------------------------
+// Anchors
+//-----------------------------------------------------------------
+
+.lv-topbar a
+{
+	position: relative; /* need this for "+" */
+	color: $topbar-anchor-color-small;
+	text-decoration: none;
+	font-size: $topbar-anchor-font-size-small;
+}
+
+.lv-topbar .lv-home a,
+.lv-topbar .lv-dropdown li:first-child a,
+.lv-topbar ul:first-of-type li:first-child a
+{
+	border: none; /* we don't need top-borders for these */
+}
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar a
+	{
+		color: $topbar-anchor-color-medium;
+		font-size: $topbar-anchor-font-size-medium;
+	}
+
+	.lv-topbar .lv-dropdown a
+	{
+		color: $topbar-dropdown-anchor-color;
+	}
+
+	.lv-topbar ul li a
+	{
+		border-top: 0;
+		border-left: $topbar-divider-border; /* optional */
+		padding-right: $topbar-anchor-side-padding; /* no longer accounting for mobile "+" icons */
+		padding-left: $topbar-anchor-side-padding;
+	}
+
+	.lv-topbar li a br
+	{
+		display: block; /* so desktop titles can have spacing */
+	}
+}
+
+//-----------------------------------------------------------------
+// Icons
+//-----------------------------------------------------------------
+
+.lv-topbar i
+{
+	display: inline-block;
+	margin-right: 10px;
+	min-width: 15px; /* force lining up icons */
+	color: $topbar-icon-color-small;
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		display: $topbar-icons-display-for-medium;
+		color: $topbar-icon-color-medium;
+	}
+}
+
+//-----------------------------------------------------------------
+// LV-HOME HELPER FEATURE
+//
+// .lv-home class placed on first <li> will reveal the icon on medium
+// breakpoints and show "Home" text on mobile.
+//-----------------------------------------------------------------
+
+.lv-topbar .lv-home
+{
+	i
+	{
+		@media (min-width: $topbar-breakpoint-medium)
+		{
+			display: inline-block;
+			margin: 0;
+			min-width: 0; /* don't need it here */
+			line-height: 0;
+		}
+	}
+
+	a:after
+	{
+		content: "Home";
+
+		@media (min-width: $topbar-breakpoint-medium)
+		{
+			content: "";
+			color: $topbar-header-menu-icon-background;
+		}
+	}
+}

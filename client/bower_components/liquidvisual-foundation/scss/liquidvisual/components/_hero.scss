@@ -1,0 +1,207 @@
+/*
+	LIQUIDVISUAL HERO :: A Personal Framework
+
+	- updated: 29.06.14
+	- liquidvisual.com
+	- licensed under MIT Open Source
+
+	- Notes -
+
+	- liquidvisual recommends bxSlider.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+// Hero
+
+$hero-height: 350px !default;
+$hero-background-attachment: inherit !default;
+
+// Captions
+
+$hero-caption-font-size-small: 0.8em !default;
+$hero-caption-font-size-medium: 1em !default;
+$hero-caption-paragraph-font-size: 1.5em !default;
+$hero-caption-color: white !default;
+
+// Carousel
+
+$hero-carousel-bullet-size: 12px !default;
+
+//-----------------------------------------------------------------
+// Hero Wrapper
+//
+// Hint: mobile is always auto - decision
+//-----------------------------------------------------------------
+
+.lv-hero-wrapper
+{
+	overflow: hidden;
+}
+
+.lv-hero-wrapper,
+.lv-hero-wrapper.has-auto-height
+{
+	height: auto;
+}
+
+@media (min-width: 768px)
+{
+	.lv-hero-wrapper
+	{
+		height: $hero-height;
+	}
+}
+
+//-----------------------------------------------------------------
+// Hero - Multiple triggers carousel
+//-----------------------------------------------------------------
+
+.lv-hero
+{
+	visibility: hidden; /* preload it with js */
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: $hero-background-attachment;
+
+	-webkit-background-size: cover;
+		-moz-background-size: cover;
+		  -o-background-size: cover;
+			  background-size: cover;
+}
+
+.is-loaded .lv-hero
+{
+	visibility: visible;
+}
+
+.is-alternate .lv-hero
+{
+	background-position-y: 0; /* small touch */
+}
+
+#lv-hero-carousel .lv-hero
+{
+	background-attachment: scroll; /* failsafe */
+}
+
+/* ======================================== */
+/* Hero - Caption
+/* ======================================== */
+
+.lv-hero-caption
+{
+	display: inline-block; /* more flexibility */
+	width: 100%; /* mobile */
+	text-align: center;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	font-size: $hero-caption-font-size-small; /* mobile */
+	padding: 10px 10px 10px 15px;
+	margin: 20px 0;
+}
+
+.lv-hero-caption p,
+.lv-hero-caption h1,
+.lv-hero-caption h2,
+.lv-hero-caption h3,
+.lv-hero-caption h4,
+.lv-hero-caption h5,
+.lv-hero-caption h6
+{
+	color: $hero-caption-color;
+	margin-top: 0 !important;
+}
+
+.is-alternate .lv-hero-caption p,
+.is-alternate .lv-hero-caption h1,
+.is-alternate .lv-hero-caption h2,
+.is-alternate .lv-hero-caption h3,
+.is-alternate .lv-hero-caption h4,
+.is-alternate .lv-hero-caption h5,
+.is-alternate .lv-hero-caption h6
+{
+	margin-bottom: 0 !important;
+}
+
+.lv-hero-caption p
+{
+	font-size: $hero-caption-paragraph-font-size;
+	margin-bottom: 0;
+}
+
+@media (min-width: 768px)
+{
+	.lv-hero-caption
+	{
+		text-align: left;
+		font-size: $hero-caption-font-size-medium;
+		width: auto;
+	}
+
+	.lv-hero .center-vertical
+	{
+		position: relative;
+		top: 45%;
+		-webkit-transform: translateY(-50%);
+			 -ms-transform: translateY(-50%);
+				  transform: translateY(-50%);
+	}
+
+	.has-auto-height .lv-hero .center-vertical
+	{
+		position: relative;
+		top: 0;
+		-webkit-transform: none;
+			 -ms-transform: none;
+				  transform: none;
+	}
+
+	.lt-ie9 .lv-hero .center-vertical
+	{
+		top: 40px; /* recommended */
+	}
+
+	.lt-ie9 .has-auto-height .lv-hero .center-vertical
+	{
+		top: 0; /* ie8 fix */
+	}
+}
+
+//-----------------------------------------------------------------
+// Hero - Carousel Controls
+//-----------------------------------------------------------------
+
+.lv-hero-carousel-bullets
+{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	/*z-index: 100;*/
+}
+
+.bx-pager-item
+{
+	display: inline-block;
+	margin: 0 3px;
+}
+
+.bx-pager-item a
+{
+	display: inline-block;
+	width: $hero-carousel-bullet-size;
+	height: $hero-carousel-bullet-size;
+	background: #676767;
+	background: rgba(214,214,214,0.5);
+	border-radius: 100%;
+	border: 1px solid #BFBFBF;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.bx-pager-item a.active
+{
+	background: white;
+	border: 1px solid #676767;
+}

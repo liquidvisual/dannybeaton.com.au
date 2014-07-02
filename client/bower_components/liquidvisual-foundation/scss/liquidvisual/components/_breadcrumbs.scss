@@ -1,0 +1,77 @@
+/*
+	LIQUIDVISUAL BREADCRUMBS :: A Personal Framework
+
+	- updated: 29.06.14
+	- liquidvisual.com
+	- licensed under MIT Open Source
+
+	- Notes -
+
+	- A better responsive alternative to Foundation's breadcrumbs.
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Breadcrumbs
+//-----------------------------------------------------------------
+
+.lv-breadcrumbs {
+	margin: 0 0 15px 0;
+	padding: 0 0 15px 0;
+	border-bottom: 1px solid #ECECEC;
+	font-size: 0.80em;
+	font-weight: 400;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		line-height: 1;
+		color: #666;
+
+		&::after {
+			content: "\203A";
+			display: inline-block;
+			margin: 0 5px;
+			font-weight: bold;
+			color: #BFBFBF;
+		}
+
+		&:first-child::after {
+			content: "";
+			margin: 0 5px 0 0;
+		}
+
+		&:last-child::after {
+			content: "";
+		}
+	}
+
+	a {
+		display: inline-block;
+
+		/* Shorten for mobile with ellipsis */
+		@media (max-width: 30em) {
+			max-width: 100px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: inline-block;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// Legacy IE-8
+//-----------------------------------------------------------------
+
+// .lt-ie9 .lv-breadcrumbs li:before {
+// 	content: "/";
+// 	display: inline-block;
+// 	margin: 0 5px;
+// 	color: #BFBFBF;
+// }
+
+// .lt-ie9 .lv-breadcrumbs li:first-child:before {
+// 	content: "";
+// }

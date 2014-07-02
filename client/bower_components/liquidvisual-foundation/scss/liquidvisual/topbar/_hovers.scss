@@ -1,0 +1,78 @@
+/*
+    LIQUIDVISUAL TOPBAR :: HOVERS
+
+    - Last updated: 14.05.14
+    - liquidvisual.com
+    - Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// Active States & Hovers
+//-----------------------------------------------------------------
+
+/* any anchor - MED */
+
+.lv-topbar .lv-topbar-body > ul > li > a:hover
+{
+   @media (min-width: $topbar-breakpoint-medium)
+   {
+      background-color: $topbar-anchor-background-color-active-medium;
+      color: $topbar-anchor-color-active-medium;
+   }
+}
+
+/* Dropdown anchor hovers - MED */
+
+.lv-topbar .lv-dropdown a:hover
+{
+   @media (min-width: $topbar-breakpoint-medium)
+   {
+      color: $topbar-anchor-color-active-medium;
+   }
+}
+
+/* Focusing on top level menu 'active' items only */
+
+.lv-topbar .lv-topbar-body > ul > li > a:active,
+.lv-topbar .lv-topbar-body > ul > li.active > a
+{
+	background-color: $topbar-anchor-background-color-active-small;
+	color: $topbar-anchor-color-active-small;
+
+  	@media (min-width: $topbar-breakpoint-medium)
+  	{
+  		background-color: $topbar-anchor-background-color-active-medium;
+  		color: $topbar-anchor-color-active-medium;
+  	}
+}
+
+.lv-topbar .lv-topbar-body > ul > li > a:active i,
+.lv-topbar .lv-topbar-body > ul > li.active > a i
+{
+   color: $topbar-anchor-color-active-small;
+
+   @media (min-width: $topbar-breakpoint-medium)
+   {
+      color: $topbar-anchor-color-active-medium;
+   }
+}
+
+// I dont like the hover effect on mobile, but not sure
+// .touch .lv-topbar .lv-topbar-body > ul > li > a:active,
+// .touch .lv-topbar .lv-topbar-body > ul > li > a:active i,
+// {
+//    color: $topbar-anchor-color-small;
+//    background-color: transparent;
+// }
+
+//-----------------------------------------------------------------
+// Reveal Dropdowns on Hover
+//-----------------------------------------------------------------
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar .has-dropdown:hover .lv-dropdown-inner,
+	.lv-topbar .lv-dropdown .has-dropdown:hover .lv-dropdown
+	{
+		display: block;
+	}
+}

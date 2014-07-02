@@ -1,0 +1,55 @@
+/*
+	LIQUIDVISUAL TOPBAR :: CARETS
+
+    - Last updated: 14.05.14
+	- liquidvisual.com
+	- Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// Mobile Carets (+) instead of triangles
+//-----------------------------------------------------------------
+
+.lv-topbar .has-dropdown > a:after
+{
+	content: "+";
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	line-height: 40px; /* technical */
+	font-size: 1.5em;
+	width: 44px; /* opinionated */
+	text-align: center;
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		display: none; /* reset +- */
+	}
+}
+
+//-----------------------------------------------------------------
+// Triangle Carets
+//-----------------------------------------------------------------
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar.has-carets .has-dropdown > a:after
+	{
+		content: "▼";
+		position: relative;
+		font-size: 0.7em;
+		display: inline-block;
+		width: auto;
+		margin-left: 5px;
+		line-height: 1;
+	}
+
+	.lv-topbar .lv-dropdown .has-dropdown > a:after
+	{
+		position: relative;
+		right: -25px;
+		content: ">";
+		float: right;
+		font-weight: bold;
+	}
+}

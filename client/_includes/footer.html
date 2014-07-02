@@ -1,0 +1,65 @@
+<section>
+   <div class="row">
+      <div class="medium-8 columns">
+         <!-- Blog Posts -->
+         <ul class="medium-block-grid-3">
+            <li>
+               <h4>Navigate</h4>
+               <ul>
+
+               {% for item in site.data.settings.primary_navigation %}
+                  <li>{{ item.title }}</li>
+               {% endfor %}
+
+               </ul>
+            </li>
+            <li>
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Author</a></li>
+                  <li><a href="#">Books</a></li>
+                  <li><a href="#">Store</a></li>
+                  <li><a href="#">Contact</a></li>
+               </ul>
+            </li>
+            <li>
+               <h4>Navigate</h4>
+               <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Author</a></li>
+                  <li><a href="#">Books</a></li>
+                  <li><a href="#">Store</a></li>
+                  <li><a href="#">Contact</a></li>
+               </ul>
+            </li>
+         </ul>
+      </div> <!-- .medium-8 -->
+
+      <!-- Newsletter Form -->
+      <div class="medium-4 columns">
+         <h4>Signup for our Newsletter</h4>
+         <form action="/" method="post">
+            <input class="errorX" type="text" name="name" placeholder="Name*" required>
+            <!--<small class="error">Please provide name</small> -->
+            <input class="errorX" type="text" name="email" placeholder="Email*" required>
+            <!--<small class="error">Please provide email</small> -->
+            <button class="button expand knockout radius" type="submit" name="submit" value="Send Message">Sure, why not.</button>
+         </form>
+      </div> <!-- .medium-4 -->
+      <!-- <hr> -->
+   </div> <!-- .row -->
+</section>
+
+<!-- Legal -->
+<section class="legal text-center medium-text-left">
+   <div class="row">
+      <div class="medium-5 columns">
+         <p><b>&copy; 2014</b> - Danny Beaton. All rights reserved.<br>
+         <small>Design <a href="http://www.liquidvisual.com">liquidvisual</a></small></p>
+      </div> <!-- .medium-5 -->
+      <div class="medium-7 columns">
+         {% include social_networks.html %}
+      </div> <!-- .medium-7 -->
+   </div> <!-- .row -->
+</section> <!-- .legal -->

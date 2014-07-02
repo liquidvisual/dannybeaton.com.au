@@ -1,0 +1,80 @@
+/*
+	LIQUIDVISUAL NOTIFICATIONS :: A Personal Framework
+
+	- updated: 29.06.14
+	- liquidvisual.com
+	- licensed under MIT Open Source
+
+	- Notes -
+
+	- Requires Modernizr
+*/
+//-----------------------------------------------------------------
+// Notifications
+//-----------------------------------------------------------------
+
+.lv-alert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2147483647;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	background: #DB2D39;
+	color: white;
+	opacity: 0.95;
+	text-align: center;
+	font-size: 0.9em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+}
+
+.lt-ie8 .lv-alert {
+	top: -2px;
+	left: -2px;
+}
+
+.lv-alert > p {
+	position: relative;
+	padding: 15px 70px;
+	margin-bottom: 0;
+
+	font-weight: 500;
+}
+
+.lv-alert a { color: #F7DDA0; text-decoration: none; }
+
+.lv-alert.success { background: #50CA00; }
+
+.lv-alert .close-btn:hover,
+.lv-alert .close-btn:active {
+	background: #C82834;
+	box-shadow: inset 0 4px 5px -3px rgba(0,0,0,0.5);
+}
+
+.lv-alert.success .close-btn:hover {
+	background: #45AF26;
+}
+
+.lv-alert .close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 20px 0 20px;
+	height: 100%;
+	font-weight: bold;
+	font-size: 2em;
+	cursor: pointer;
+	-webkit-transition: all .3s linear;
+		-moz-transition: all .3s linear;
+		 -ms-transition: all .3s linear;
+		  -o-transition: all .3s linear;
+			  transition: all .3s linear;
+
+	padding: 3px 20px 0 20px \9; /* ie9 */
+}
+
+.lt-ie8 .lv-alert .close-btn {
+	padding: 5px 20px 0 20px;
+}

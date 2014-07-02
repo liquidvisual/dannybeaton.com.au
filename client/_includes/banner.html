@@ -1,0 +1,58 @@
+{% comment %} TODO: remove ID for JS if less than 2 data sliders. For fixed background.{% endcomment %}
+
+{% if page.url == '/' or page.url == site.baseurl %}
+<div class="lv-hero-wrapper has-auto-height" id="lv-hero-carousel">
+{% else %}
+<div class="lv-hero-wrapper has-auto-height is-alternate">
+{% endif %}
+
+	{% comment %}
+		The homepage will draw from 'data/homepage_banners.yml', internal pages will use the banner set by the individual page. Set default in '_config.yml'
+	{% endcomment %}
+
+	{% for banner in site.data.homepage_banners %}
+		<div class="lv-hero" data-background-image="{% if page.url == '/' or page.url == site.baseurl %}{{ banner.img_path }}{% else %}{{ page.banner_img_path }}{% endif %}">
+
+			<!-- Caption -->
+			<div class="row">
+				<div class="columns">
+
+					<article class="lv-hero-caption animated">
+
+						<div class="row collapse">
+							<div class="medium-4 medium-push-8 large-4 columns">
+								<p class="lv-hero-caption-text"><img width="700" src="img/content/mal-text-fg@2x.png" alt="Mal Winter"></p>
+							</div>
+							<div class="medium-8 medium-pull-4 large-8 columns">
+								<p><img width="700" src="img/content/mal-fg@2x.png" alt="Mal Winter"></p>
+							</div> <!-- .columns -->
+						</div> <!-- .row -->
+
+					</article> <!-- .lv-hero-caption -->
+
+				</div>
+			</div>
+
+		</div> <!-- .lv-hero -->
+
+		{% comment %}
+			** Internal pages will exit after first loop (no carousel needed) **
+		{% endcomment %}
+
+		{% unless page.url == '/' or page.url == site.baseurl %}{% break %}{% endunless %}
+	{% endfor %}
+
+</div> <!-- .lv-hero-wrapper -->
+
+{% comment %}
+    ** Bullets displayed only on the homepage setting **
+{% endcomment %}
+
+{% if page.url == '/' or page.url == site.baseurl %}
+	<!-- Bullets -->
+	<div class="row">
+		<div class="columns">
+			<div class="lv-hero-carousel-bullets show-for-medium-up"></div>
+		</div>
+	</div> <!-- .row -->
+{% endif %}

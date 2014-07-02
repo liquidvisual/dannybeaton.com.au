@@ -1,0 +1,46 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Behold, here are all the Foundation components.
+@import
+  "settings",
+  "../../libs/foundation/scss/foundation/components/grid",
+  // "../../libs/foundation/scss/foundation/components/accordion",
+  // "../../libs/foundation/scss/foundation/components/alert-boxes",
+  "../../libs/foundation/scss/foundation/components/block-grid",
+  "../../libs/foundation/scss/foundation/components/breadcrumbs",
+  // "../../libs/foundation/scss/foundation/components/button-groups",
+  "../../libs/foundation/scss/foundation/components/buttons",
+  // "../../libs/foundation/scss/foundation/components/clearing",
+  // "../../libs/foundation/scss/foundation/components/dropdown",
+  // "../../libs/foundation/scss/foundation/components/dropdown-buttons",
+  // "../../libs/foundation/scss/foundation/components/flex-video",
+  "../../libs/foundation/scss/foundation/components/forms",
+  "../../libs/foundation/scss/foundation/components/inline-lists",
+  // "../../libs/foundation/scss/foundation/components/joyride",
+  // "../../libs/foundation/scss/foundation/components/keystrokes",
+  "../../libs/foundation/scss/foundation/components/labels",
+  // "../../libs/foundation/scss/foundation/components/magellan",
+  // "../../libs/foundation/scss/foundation/components/orbit",
+  // "../../libs/foundation/scss/foundation/components/pagination",
+  // "../../libs/foundation/scss/foundation/components/panels",
+  // "../../libs/foundation/scss/foundation/components/pricing-tables",
+  // "../../libs/foundation/scss/foundation/components/progress-bars",
+  // "../../libs/foundation/scss/foundation/components/range-slider",
+  // "../../libs/foundation/scss/foundation/components/reveal",
+  // "../../libs/foundation/scss/foundation/components/side-nav",
+  // "../../libs/foundation/scss/foundation/components/split-buttons",
+  // "../../libs/foundation/scss/foundation/components/sub-nav",
+  // "../../libs/foundation/scss/foundation/components/switch",
+  "../../libs/foundation/scss/foundation/components/tables",
+  // "../../libs/foundation/scss/foundation/components/tabs",
+  "../../libs/foundation/scss/foundation/components/thumbs",
+  // "../../libs/foundation/scss/foundation/components/tooltips",
+  // "../../libs/foundation/scss/foundation/components/top-bar",
+  "../../libs/foundation/scss/foundation/components/type",
+  // "../../libs/foundation/scss/foundation/components/offcanvas",
+  "../../libs/foundation/scss/foundation/components/visibility";

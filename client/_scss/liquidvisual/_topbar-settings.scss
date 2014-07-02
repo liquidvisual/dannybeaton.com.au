@@ -1,0 +1,100 @@
+@import "../foundation/settings";
+/*
+    LIQUIDVISUAL TOPBAR :: SETTINGS
+
+    - Last updated: 17.06.14
+    - liquidvisual.com
+    - Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// - Docs -
+//-----------------------------------------------------------------
+
+// Second level nav only, no third
+// control fontsize from UL
+// borders are made first-child first, for ease + ie
+// can specify to show icons on large or not
+// is-liquid can only be applied to top level ULs - will inject
+// .lv-dropdown-wrapper to fix Firefox relative table bug
+// todo: logo text centered
+// fix carets - make triangles or less big
+// todo: font setting on lv-logo
+
+//-----------------------------------------------------------------
+// Site Specific Settings
+//-----------------------------------------------------------------
+
+// Breakpoints
+
+$topbar-breakpoint-small: upper-bound($small-range);
+$topbar-breakpoint-medium: upper-bound($medium-range);
+$topbar-breakpoint-large: upper-bound($large-range);
+
+// Color Palette
+
+$topbar-primary-color: $primary-color; // Link color
+$topbar-secondary-color: white; // Background color
+$topbar-tertiary-color: #515863; // Text color
+$topbar-quaternary-color: #E1E1E1; // Line Color
+
+//-----------------------------------------------------------------
+// Topbar Instance Settings
+//
+// Notes:
+// To color the topbar you'll need to know what you're targeting.
+// $topbar-background-small = targets menu, not the bar (topbar-header)
+// $topbar-background-medium = menu is hidden, colors bar BG
+//-----------------------------------------------------------------
+
+// Topbar Background
+
+$topbar-background-small: $topbar-secondary-color; // Colors menu contents on small
+$topbar-background-medium: transparent; //$topbar-secondary-color; // Colors bar on medium
+
+// Topbar Header
+
+$topbar-height: 44px;
+$topbar-header-logo-border: 8px solid $topbar-secondary-color; // Create "padding" on the logo
+$topbar-header-background: #F7E9CA; //$topbar-secondary-color; // Colors menu bar on small
+$topbar-header-font-weight: bold;
+$topbar-header-menu-icon-background: $topbar-tertiary-color; // greyish
+
+// Topbar Body (Menu)
+
+$topbar-body-border-top: 2px solid $topbar-primary-color;
+$topbar-body-max-height: 400px;
+
+// Anchors
+
+$topbar-anchor-side-padding: 20px;
+$topbar-anchor-font-size-small: 1em;
+$topbar-anchor-font-size-medium: inherit;
+$topbar-anchor-color-small: $topbar-tertiary-color;
+$topbar-anchor-color-medium: #222;
+$topbar-anchor-border-top: 1px solid $topbar-quaternary-color;
+$topbar-divider-border: none; //1px solid $topbar-quaternary-color; /* optional */
+$topbar-dropdown-anchor-border-top: 1px solid $topbar-quaternary-color;
+$topbar-dropdown-anchor-color: $topbar-tertiary-color;
+
+// Icons
+
+$topbar-icon-color-small: $topbar-primary-color;
+$topbar-icon-color-medium: inherit;
+$topbar-icons-display-for-medium: none;
+
+// Hovers
+
+$topbar-anchor-background-color-active-small: $topbar-primary-color;
+$topbar-anchor-background-color-active-medium: transparentize(#F9D4A6, 0.3); //transparent;
+$topbar-anchor-color-active-small: $topbar-secondary-color;
+$topbar-anchor-color-active-medium: inherit; //$topbar-primary-color;
+
+// Dropdowns
+
+$topbar-dropdown-background-small: $topbar-quaternary-color;
+$topbar-dropdown-background-medium: $topbar-secondary-color;
+$topbar-dropdown-border: 1px solid #BFBFBF;
+
+// States
+
+$topbar-liquid-state-table-layout: fixed;

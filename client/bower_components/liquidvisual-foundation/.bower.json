@@ -1,0 +1,29 @@
+{
+  "name": "liquidvisual",
+  "main": [
+    "css/liquidvisual.css",
+    "js/liquidvisual.js"
+  ],
+  "dependencies": {
+    "animate.css": ">=3.1.1",
+    "bxSlider": "4.1.2",
+    "foundation": ">=5.2.3",
+    "foundation-icon-fonts": "zurb/foundation-icon-fonts",
+    "jquery.scrollTo": "1.4.12",
+    "magnific-popup": "0.9.9",
+    "WOW": "0.1.9",
+    "nprogress": "~0.1.6"
+  },
+  "devDependencies": {},
+  "private": false,
+  "homepage": "https://github.com/liquidvisual/liquidvisual-foundation",
+  "_release": "89f3901426",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "89f3901426100242f47d6b259f20c6a7f48a4294"
+  },
+  "_source": "https://github.com/liquidvisual/liquidvisual-foundation.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/liquidvisual/liquidvisual-foundation.git"
+}

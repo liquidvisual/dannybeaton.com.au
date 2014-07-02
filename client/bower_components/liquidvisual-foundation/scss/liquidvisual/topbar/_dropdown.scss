@@ -1,0 +1,134 @@
+/*
+	LIQUIDVISUAL TOPBAR :: DROPDOWN
+
+    - Last updated: 14.05.14
+	- liquidvisual.com
+	- Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// Display
+//
+// .lv-dropdown-inner and .lv-dropdown-outer wrap
+// the .lv-dropdown via JQuery.
+//-----------------------------------------------------------------
+
+.lv-topbar .lv-dropdown-inner
+{
+	display: none;
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		position: absolute;
+		top: auto;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+.lv-topbar .lv-dropdown-outer,
+.lv-topbar .has-dropdown
+{
+	position: relative;
+}
+
+/* feature: Place '.is-right-aligned' class on last elements so dropdowns don't exceed edge */
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar .is-right-aligned .lv-dropdown-inner
+	{
+		left: auto;
+		right: 0;
+	}
+}
+
+//-----------------------------------------------------------------
+// Dropdown
+//-----------------------------------------------------------------
+
+.lv-topbar .lv-dropdown
+{
+	padding: 10px 15px; /* UX decision */
+	background: $topbar-dropdown-background-small;
+	text-align: left; /* override parent */
+
+	li
+	{
+		display: block;
+		float: none;
+	}
+
+	a
+	{
+		padding-left: 0;
+		border-top: $topbar-dropdown-anchor-border-top;
+		font-size: 0.8em;
+
+		@media (min-width: $topbar-breakpoint-medium)
+		{
+			border: none;
+			padding: 5px 30px 5px 0;
+			max-width: 300px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap; /* allows normal menus to grow length ways */
+		}
+	}
+
+	//=============================================
+	// Nested Dropdown
+	//=============================================
+
+	.lv-dropdown
+	{
+		@media (min-width: $topbar-breakpoint-medium)
+		{
+			position: absolute;
+			top: 0;
+			left: 100%;
+			z-index: 1;
+			display: none;
+		}
+	}
+
+	//=============================================
+	// Medium Dropdown
+	//=============================================
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		background: $topbar-dropdown-background-medium;
+		border: $topbar-dropdown-border;
+	}
+}
+
+//-----------------------------------------------------------------
+// Mega Menus
+//-----------------------------------------------------------------
+
+@media (min-width: $topbar-breakpoint-medium)
+{
+	.lv-topbar .is-full-width .lv-dropdown-outer,
+	.lv-topbar .is-full-width
+	{
+		position: static;
+	}
+
+	.lv-topbar .is-full-width .lv-dropdown-inner
+	{
+		width: 100%;
+	}
+
+	.lv-topbar .is-full-width li a
+	{
+		max-width: none;
+		white-space: normal;
+	}
+
+	/* Image helper */
+
+	.lv-topbar .is-full-width img
+	{
+		max-width: 100%;
+	}
+}

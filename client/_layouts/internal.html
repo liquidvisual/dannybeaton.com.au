@@ -1,0 +1,30 @@
+---
+layout: master
+---
+
+{% include breadcrumbs.html %}
+
+<div class="row">
+
+	<!-- Main -->
+
+	<main class="main">
+		<div class="medium-9 columns">
+
+		<h1>{{ title }}</h1>
+		{{ content }}
+
+		</div> <!-- .medium-8 -->
+	</main> <!-- .main -->
+
+	<!-- Sidebar -->
+
+	<aside class="sidebar">
+		<div class="medium-3 columns">
+
+			{% include sidebar_default.html %}
+
+		</div> <!-- .medium-4 -->
+	</aside> <!-- .sidebar -->
+
+</div> <!-- .row -->

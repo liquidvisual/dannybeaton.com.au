@@ -1,0 +1,9 @@
+# GLOBAL SITE SETTINGS
+
+# Order the primary navigation (skip home) : add for dropdown - 'second_level: products'
+primary_navigation:
+ - {title: About Me, icon: fi-torso-business, url: "#", img_icon: "/img/content/mug-icon@2x.png"}
+ - {title: My Books, icon: fi-monitor, url: "#", img_icon: "/img/content/book-icon@2x.png"}
+ - {title: Author Talks, icon: fi-pencil, url: "#", img_icon: "/img/content/speaker-icon@2x.png"}
+ - {title: Store, icon: fi-mail, url: "#", img_icon: "/img/content/cart-icon@2x.png"}
+ - {title: Contact Me, icon: fi-mail, url: "#", img_icon: "/img/content/envelope-icon@2x.png"}

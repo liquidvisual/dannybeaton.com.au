@@ -1,0 +1,78 @@
+<form data-abide novalidate id="contact" action="http://www.liquidvisual.net/files/contact-form/index.php" method="post" class="hidden">
+	<!-- Name* -->
+	<input type="text" name="name" placeholder="Your name*" required>
+	<small class="error">Please provide name</small>
+
+	<!-- Email* -->
+	<input type="text" name="email" placeholder="Email*" required>
+	<small class="error">Please provide email</small>
+
+	<!-- Phone (optional) -->
+	<input type="text" name="phone" placeholder="Phone (optional)">
+
+	<!-- Budget -->
+	<select name="budget">
+		<option selected disabled>Budget</option>
+		<option value="$1000 - $2500">$1000 - $2500</option>
+		<option value="$2500 - $5000">$2500 - $5000</option>
+		<option value="$5000 - $10000">$5000 - $10000</option>
+		<option value="$10000 - $20000">$10000 - $20000</option>
+		<option value="$20000 or more">$20000 or more</option>
+	</select>
+
+	<textarea rows="10" name="message" placeholder="Your enquiry*" required></textarea>
+	<small class="error">Please provide message</small>
+
+	<button class="button tiny-button expand-for-small center" type="submit">Contact us!</button>
+	<p class="right"><small>*required fields</small></p>
+
+</form> <!-- .custom -->
+
+
+<form data-abide>
+	<div class="name-field">
+		<label>Your name <small>required</small>
+			<input type="text" required pattern="[a-zA-Z]+">
+		</label>
+		<small class="error">Name is required and must be a string.</small>
+	</div>
+	<div class="email-field">
+		<label>Email <small>required</small>
+			<input type="email" required>
+		</label>
+		<small class="error">An email address is required.</small>
+	</div>
+	<div class="phone-field">
+		<label>Phone
+			<input type="text">
+		</label>
+		<small class="error">Please try again.</small>
+	</div>
+	<div class="budget-field">
+		<label for="customDropdown1">Budget <small>required</small>
+			<select id="customDropdown1" class="medium" required>
+				<option value="">Select your Budget</option>
+				<option value="1000-2500">$1000 - $2500</option>
+				<option value="2500-5000">$2500 - $5000</option>
+				<option value="5000-10000">$5000 - $10000</option>
+				<option value="10000-20000">$10000 - $20000</option>
+				<option value="20000+">$20000 or more</option>
+			</select>
+		</label>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<label for="remarks">Your message <small>required</small></label>
+			<textarea rows="10" id="message" name="message" placeholder="Your message" required></textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<button type="submit" class="button round">Contact us</button>
+		</div>
+	</div>
+
+
+</form>

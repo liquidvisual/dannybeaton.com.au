@@ -1,0 +1,105 @@
+/*
+	LIQUIDVISUAL TOPBAR :: HEADER
+
+    - Last updated: 14.05.14
+	- liquidvisual.com
+	- Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// Topbar Header (Mobile)
+//-----------------------------------------------------------------
+
+.lv-topbar-header
+{
+	position: relative;
+	height: $topbar-height;
+	line-height: $topbar-height;
+	background: $topbar-header-background;
+	font-weight: $topbar-header-font-weight;
+	overflow: hidden; /* needed */
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		display: none;
+	}
+}
+
+//-----------------------------------------------------------------
+// Topbar Logo
+//-----------------------------------------------------------------
+
+.lv-topbar-header .lv-logo
+{
+	display: inline-block;
+	line-height: $topbar-height;
+
+	img
+	{
+		outline: none; /* useful reset */
+		height: $topbar-height;
+		border: $topbar-header-logo-border;
+	}
+
+	.lv-logo-text
+	{
+		margin: 0 15px; /* opinionated */
+		float: right;
+	}
+}
+
+/* ======================================== */
+/* Search Icon - -webkit-appearance: none; ??
+/* ======================================== */
+
+.lv-topbar-header .lv-search-icon
+{
+	background: url(../img/ui/search-icon.svg) no-repeat right;
+	background-size: 20px;
+	float: right;
+	height: 100%;
+	min-width: 44px;
+}
+
+//=============================================
+// Topbar Menu Icon ---
+//=============================================
+
+.lv-topbar-header .lv-menu-icon
+{
+	float: right;
+	height: 100%;
+	min-width: 50px; /* UX decision */
+	color: $topbar-header-menu-icon-background; // "menu text"
+
+	&:before,
+	&:after
+	{
+		position: absolute;
+		content: "";
+	}
+
+	/* Hamburger Icon */
+
+	&:after
+	{
+		top: 50%;
+		margin-top: -8px; /* half of self = vertical center */
+		right: 15px;
+		width: 20px;
+		height: 2px;
+		background: $topbar-header-menu-icon-background;
+		box-shadow: 0 7px 0 0 $topbar-header-menu-icon-background, 0 14px 0 0 $topbar-header-menu-icon-background;
+	}
+
+	/* Adding a span inside of the icon with text "menu" */
+
+	.lv-menu-icon-text
+	{
+		padding: 0 50px 0 15px; /* UX, relates to search icon */
+	}
+
+	@media (min-width: $topbar-breakpoint-medium)
+	{
+		display: none;
+	}
+}
