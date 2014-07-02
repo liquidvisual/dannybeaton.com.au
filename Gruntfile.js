@@ -10,7 +10,8 @@ module.exports = function (grunt) {
       //-----------------------------------------------------
       config: {
          app: 'client',
-         dist: 'dist'
+         dist: 'dist',
+         git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
       },
       //-----------------------------------------------------
       // TAKANA - live Sass refreshing
@@ -37,7 +38,6 @@ module.exports = function (grunt) {
       //-----------------------------------------------------
       buildcontrol: {
         options: {
-          dir: './',
           commit: true,
           connectCommits: false,
           push: true,
@@ -45,8 +45,16 @@ module.exports = function (grunt) {
         },
         master: {
           options: {
-            remote: 'git@github.com:liquidvisual/dannybeaton.com.au.git',
+            dir: './',
+            remote: '<%= config.git %>',
             branch: 'master'
+          }
+        },
+        pages: {
+          options: {
+            dir: '<%= config.dist %>',
+            remote: '<%= config.git %>',
+            branch: 'gh-pages'
           }
         }
       },
