@@ -141,6 +141,10 @@ $("#contact").on("valid invalid submit", function(e){
 	e.stopPropagation();
 	e.preventDefault();
 	if (e.type === "valid"){
+
+		form.find($('button[type=submit]').addClass('disabled'));
+		NProgress.start();
+
 		$.ajax({
 					type: 'POST',
 					url: form.attr('action'),
@@ -151,6 +155,7 @@ $("#contact").on("valid invalid submit", function(e){
 						//$('form input, form textarea').prop('disabled', true); // disable the form
 						//$('.checkbox, .radio').removeClass("checked"); // wipe the ticks
 						form[0].reset(); // wipe the form data
+						NProgress.done();
 						alert("Thanks for your message!");
 			} // success
 		}); // ajax
