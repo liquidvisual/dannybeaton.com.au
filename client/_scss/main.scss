@@ -167,8 +167,40 @@
 //-----------------------------------------------------------------
 
 .pricing-table i {
-	// color: #75B449;
+	color: #75B449;
 }
+
+.pricing-table .title {
+	border-radius: $global-radius $global-radius 0 0;
+}
+
+.pricing-table {
+	border-radius: $global-radius;
+	// box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.26);
+}
+
+// .digital-package { border-color: #59C2C5; }
+// .book-package { border-color: #EC734D; }
+// .premium-package { border-color: #469DC7; }
+
+.digital-package .title {
+	background: #59C2C5;
+}
+
+.book-package .title {
+	background: #EC734D;
+}
+
+.premium-package .title {
+	background: #469DC7;
+}
+
+// .digital-package .title,
+// .book-package .title,
+// .premium-package .title {
+// 	background: url(../img/content/clouds-bg.jpg);
+// 	color: #222;
+// }
 
 //========================================
 // Modules - Promo Tiles
