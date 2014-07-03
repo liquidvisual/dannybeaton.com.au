@@ -205,28 +205,28 @@
 <section class="section intro-section text-center">
 	<div class="row">
 		<div class="medium-9 medium-centered columns">
-			<form data-abide novalidate id="contact" action="http://www.liquidvisual.net/files/contact-form/index.php" method="post" class="hidden">
+			<form data-abide novalidate id="contact" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/index.php" method="post">
 	<div class="name-field">
 		<label><!-- Your name <small>required</small> -->
-			<input type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
+			<input name="name" type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
 		</label>
 		<small class="error">Name is required and must be a string.</small>
 	</div>
 	<div class="email-field">
 		<label><!-- Email <small>required</small> -->
-			<input type="email" placeholder="Email*" required>
+			<input name="email" type="email" placeholder="Email*" required>
 		</label>
 		<small class="error">An email address is required.</small>
 	</div>
 	<div class="phone-field">
 		<label><!-- Phone -->
-			<input type="text" placeholder="Phone (optional)">
+			<input name="phone" type="text" placeholder="Phone (optional)">
 		</label>
 		<small class="error">Please try again.</small>
 	</div>
 	<div class="referral-field">
 		<label for="customDropdown1"><!-- Budget <small>required</small> -->
-			<select id="customDropdown1" class="medium" required>
+			<select name="referral" id="customDropdown1" class="medium" required>
 				<option value="">How did you hear about me?</option>
 				<option value="Google">Google</option>
 				<option value="Twitter">Twitter</option>
@@ -249,7 +249,6 @@
 			<button type="submit" class="button radius depth flat">Send Message</button>
 		</div>
 	</div>
-
 
 </form>
 		</div>
