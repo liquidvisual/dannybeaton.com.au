@@ -1,2 +1,4 @@
 # Site settings for GIT deployment
-baseurl: "http://liquidvisual.github.io/dannybeaton.com.au"
+baseurl: "http://dannybeaton.com.au"
+
+#http://liquidvisual.github.io/dannybeaton.com.au
