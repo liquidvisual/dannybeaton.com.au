@@ -2,7 +2,9 @@ module.exports = function (grunt) {
 
    // load time-grunt and all grunt plugins found in the package.json
    require('time-grunt')(grunt);
-   require('load-grunt-tasks')(grunt);
+   require('jit-grunt')(grunt, {
+    buildcontrol: 'grunt-build-control' // plugin can't be resolved in automatic mapping
+   });
 
    grunt.initConfig({
       //-----------------------------------------------------
@@ -11,6 +13,8 @@ module.exports = function (grunt) {
       config: {
          app: 'client',
          dist: 'dist',
+         port: '9000',
+         takanaOn: true, // see notes in 'Watch'
          git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
       },
       //-----------------------------------------------------
@@ -18,7 +22,7 @@ module.exports = function (grunt) {
       //
       // Sometimes Takana screws up with Foundation's 'functions.scss'.
       // To fix, remove '/_scss' below. Run grunt takana, then quit..
-      // add '/scss' back onto it and re-run. Don't ask.
+      // add '/_scss' back onto it and re-run. Don't ask.
       //-----------------------------------------------------
       takana: {
          options: {
@@ -33,7 +37,7 @@ module.exports = function (grunt) {
             command: "jekyll build --source <%= config.app %>  --destination .tmp"
          },
          jekyllBuild: {
-            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config _config.deploy.yml"
+            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config <%= config.app %>/_config.build.yml"
          }
       },
       //-----------------------------------------------------
@@ -59,34 +63,37 @@ module.exports = function (grunt) {
             remote: '<%= config.git %>',
             branch: 'gh-pages'
           }
+        },
+        local: {
+          options: {
+            remote: '../',
+            branch: 'build'
+          }
         }
       },
       //-----------------------------------------------------
       // SASS - Compiles sass only, leaves .css alone
       //-----------------------------------------------------
+      //-----------------------------------------------------
+      // SASS - Compiles sass only, leaves .css alone
+      //-----------------------------------------------------
       sass: {
-        options: {
-          debugInfo: false,
-          lineNumbers: false,
-          style: 'compressed'
-        },
-         temp: {
-          files: [{
-            expand: true,
-            cwd: '<%= config.app %>/_scss',
-            src: '**/*.{scss,sass}',
-            dest: '.tmp/css',
-            ext: '.css'
-          }]
+        temp: {
+            files: {
+                '.tmp/css/main.css' : '<%= config.app %>/_scss/main.scss',
+                '.tmp/css/liquidvisual.css' : '<%= config.app %>/_scss/liquidvisual/liquidvisual.scss',
+                '.tmp/css/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
+            }
         },
         dist: {
-          files: [{
-            expand: true,
-            cwd: '<%= config.app %>/_scss',
-            src: '**/*.{scss,sass}',
-            dest: '<%= config.dist %>/css',
-            ext: '.css'
-          }]
+          options: {
+            outputStyle: 'compressed'
+          },
+          files: {
+              '<%= config.dist %>/css/main.css' : '<%= config.app %>/_scss/main.scss',
+              '<%= config.dist %>/css/liquidvisual.css' : '<%= config.app %>/_scss/liquidvisual/liquidvisual.scss',
+              '<%= config.dist %>/css/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
+          }
         }
       },
       //-----------------------------------------------------
@@ -94,14 +101,14 @@ module.exports = function (grunt) {
       //-----------------------------------------------------
       connect: {
          options: {
-            port: 9000,
+            port: '<%= config.port %>',
             livereload: 35729,
             hostname: '0.0.0.0'
          },
          livereload: {
             options: {
                open: true,
-               base: '.tmp'
+               base: ['.tmp', '<%= config.app %>']
             }
          },
          dist: {
@@ -117,13 +124,23 @@ module.exports = function (grunt) {
       //-----------------------------------------------------
       watch: {
 
+        options: {
+          livereload: true,
+          spawn: true
+        },
+
          sass: {
             files: ['<%= config.app %>/_scss/**/*.{scss,sass}'],
             tasks: ['sass:temp'],
             options : {
-               spawn: false,
-               livereload: true
+               livereload: '<%= config.takanaOn %>' // SWITCH true to live inject but BREAK Takana
             }
+         },
+
+         css: {
+            files: ['.tmp/css/**/*.css'],
+            tasks: [],
+            reload: true
          },
 
          // If any of these files change:
@@ -139,7 +156,6 @@ module.exports = function (grunt) {
                 '<%= config.app %>/**/*.html',
                 '<%= config.app %>/**/*.yml',
                 '<%= config.app %>/**/*.md',
-                '<%= config.app %>/css/**/*.css',
                 '<%= config.app %>/scripts/**/*.js',
                 '<%= config.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
                 //'!<%= config.app %>/**/_s/**'
@@ -168,10 +184,10 @@ module.exports = function (grunt) {
    ]);
 
    // Build only
-   // grunt.registerTask('default', [
-   //    'shell:jekyllBuild',
-   //    'sass'
-   // ]);
+   grunt.registerTask('default', [
+      'shell:jekyllBuild',
+      'sass:dist'
+   ]);
 
 //-- end module.exports
 };

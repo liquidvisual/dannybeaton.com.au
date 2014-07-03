@@ -3,7 +3,6 @@ name: Danny Beaton
 title: Danny Beaton
 email: author@dannybeaton.com.au
 description: "Site description goes here"
-baseurl: ""
 
 # Build settings
 markdown: kramdown
