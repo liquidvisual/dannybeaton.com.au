@@ -156,6 +156,12 @@
 	// color: #FBEDCC;
 }
 
+@media #{$medium-up} {
+	.testimonials-section li:first-child blockquote {
+		border-left: 0;
+	}
+}
+
 //-----------------------------------------------------------------
 // Content
 //-----------------------------------------------------------------
@@ -166,8 +172,9 @@
 // Modules
 //-----------------------------------------------------------------
 
-.pricing-table i {
-	color: #75B449;
+.pricing-table i.icon-plus,
+.pricing-table i.icon-check {
+	color: #75B449; //green ticks
 }
 
 .pricing-table .title {
@@ -183,16 +190,29 @@ a.gumroad-button {
 	color: #64BCCC !important;
 }
 
-// .digital-package { border-color: #59C2C5; }
-// .book-package { border-color: #EC734D; }
-// .premium-package { border-color: #469DC7; }
+.button.buy-button,
+.button.buy-button:active {
+	background: #59C2C5;
+	color: white;
+	border: 2px solid #59C2C5;
+}
 
-.lv-super .cta-button {
-	// background: #F7E9CA;
+.button.buy-button:active i {
+	color: white
+}
+
+.buy-button i {
+	color: white;
+}
+
+.buy-button:hover i,
+.buy-button:hover {
+	background: transparent;
+	color: #59C2C5;
 }
 
 .digital-package .title {
-	background: #59C2C5;
+	background: #63BFF1;
 }
 
 .book-package .title {
@@ -200,15 +220,8 @@ a.gumroad-button {
 }
 
 .premium-package .title {
-	background: #469DC7;
+	background: #555;
 }
-
-// .digital-package .title,
-// .book-package .title,
-// .premium-package .title {
-// 	background: url(../img/content/clouds-bg.jpg);
-// 	color: #222;
-// }
 
 //========================================
 // Modules - Promo Tiles
@@ -326,6 +339,8 @@ a.gumroad-button {
 //-----------------------------------------------------------------
 // Special
 //-----------------------------------------------------------------
+
+
 
 // .lv-quote {
 // 	background: url(../img/ui/quotes.svg) no-repeat right top;

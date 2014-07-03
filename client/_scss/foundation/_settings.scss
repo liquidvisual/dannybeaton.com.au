@@ -890,12 +890,12 @@ $price-desc-font-size: rem-calc(16); //rem-calc(12);
 // $price-item-color: #333;
 // $price-item-padding: rem-calc(15);
 // $price-item-align: center;
-// $price-item-font-size: rem-calc(14);
+$price-item-font-size: rem-calc(16);
 // $price-item-weight: $font-weight-normal;
 // $price-item-bottom-border: dotted 1px #ddd;
 
 // We use these to control the CTA area styles
-// $price-cta-bg: #fff;
+$price-cta-bg: transparent; //#fff;
 // $price-cta-align: center;
 // $price-cta-padding: rem-calc(20 20 0);
 

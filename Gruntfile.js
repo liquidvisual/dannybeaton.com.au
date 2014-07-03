@@ -14,7 +14,7 @@ module.exports = function (grunt) {
          app: 'client',
          dist: 'dist',
          port: '9000',
-         takanaOn: true, // see notes in 'Watch'
+         takanaOn: false, // see notes in 'Watch'
          git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
       },
       //-----------------------------------------------------
