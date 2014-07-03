@@ -8,8 +8,8 @@ instagram: "http://instagram.com/dannybeaton"
 
 # Order the primary navigation (skip home) : add for dropdown - 'second_level: products'
 primary_navigation:
- - {title: About Me, icon: fi-torso-business, url: "/about/", img_icon: "/img/content/mug-icon@2x.png"}
- - {title: My Books, icon: fi-monitor, url: "/books/", img_icon: "/img/content/book-icon@2x.png"}
- - {title: Author Talks, icon: fi-pencil, url: "/author-talks/", img_icon: "/img/content/speaker-icon@2x.png"}
+ - {title: Author, icon: fi-torso-business, url: "/about/", img_icon: "/img/content/mug-icon@2x.png"}
+ - {title: Books, icon: fi-monitor, url: "/books/", img_icon: "/img/content/book-icon@2x.png"}
+ - {title: Talks, icon: fi-pencil, url: "/author-talks/", img_icon: "/img/content/speaker-icon@2x.png"}
  - {title: Store, icon: fi-mail, url: "/store/", img_icon: "/img/content/cart-icon@2x.png"}
- - {title: Contact Me, icon: fi-mail, url: "/contact/", img_icon: "/img/content/envelope-icon@2x.png"}
+ - {title: Contact, icon: fi-mail, url: "/contact/", img_icon: "/img/content/envelope-icon@2x.png"}

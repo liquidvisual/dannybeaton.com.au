@@ -81,6 +81,12 @@
 	margin-bottom: 5px;
 }
 
+.navigation .node-icon {
+	// background: #F9DBB2;
+	// border-radius: 100%;
+	// padding: 8px;
+}
+
 //-----------------------------------------------------------------
 // Banner
 //-----------------------------------------------------------------
@@ -186,30 +192,26 @@
 	// box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.26);
 }
 
-a.gumroad-button {
-	color: #64BCCC !important;
-}
+// .button.buy-button,
+// .button.buy-button:active {
+// 	background: #59C2C5;
+// 	color: white;
+// 	border: 2px solid #59C2C5;
+// }
 
-.button.buy-button,
-.button.buy-button:active {
-	background: #59C2C5;
-	color: white;
-	border: 2px solid #59C2C5;
-}
+// .button.buy-button:active i {
+// 	color: white
+// }
 
-.button.buy-button:active i {
-	color: white
-}
+// .buy-button i {
+// 	color: white;
+// }
 
-.buy-button i {
-	color: white;
-}
-
-.buy-button:hover i,
-.buy-button:hover {
-	background: transparent;
-	color: #59C2C5;
-}
+// .buy-button:hover i,
+// .buy-button:hover {
+// 	background: transparent;
+// 	color: #59C2C5;
+// }
 
 .digital-package .title {
 	background: #63BFF1;

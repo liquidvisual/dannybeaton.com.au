@@ -26,7 +26,7 @@
                 <li class="{% if node.url == page.url %}active{% endif %} {% if node.second_level %}has-dropdown{% endif %}">
                     <a href="{{ node.url | prepend: site.baseurl }}">
                         <div class="text-center img-icon show-for-medium-up">
-                            <img width="40" src="{{site.baseurl}}{{node.img_icon}}" alt="Icon">
+                            <img class="node-icon" width="45" src="{{site.baseurl}}{{node.img_icon}}" alt="Icon">
                         </div>
                     <i class="{{ node.icon }}"></i> {{ node.title }}</a>
 
@@ -42,7 +42,7 @@
         </ul>
 
         <ul class="lv-right-for-medium-up show-for-medium-up">
-            <li><a class="button radius knockout" href="#">Buy Now</a></li>
+            <li><a class="button radius knockout" href="#">Pre-order Book</a></li>
         </ul>
     </div> <!-- .lv-topbar-body -->
 
