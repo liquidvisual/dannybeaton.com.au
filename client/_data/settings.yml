@@ -1,5 +1,10 @@
 # GLOBAL SITE SETTINGS
 
+twitter: "https://twitter.com/DannyBeaton"
+youtube: "https://www.youtube.com/channel/UCdQiykMwQXT_hLHmlgZ54FQ"
+facebook: "https://facebook.com/dannybeatonwriter"
+instagram: "http://instagram.com/dannybeaton"
+
 # Order the primary navigation (skip home) : add for dropdown - 'second_level: products'
 primary_navigation:
  - {title: About Me, icon: fi-torso-business, url: "/about/", img_icon: "/img/content/mug-icon@2x.png"}
