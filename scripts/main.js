@@ -140,9 +140,10 @@ $("#contact").on("valid invalid submit", function(e){
 	var form = $(this);
 	e.stopPropagation();
 	e.preventDefault();
+
 	if (e.type === "valid"){
 
-		form.find($('button[type=submit]').addClass('disabled'));
+		$('.contact-submit').addClass('disabled');
 		NProgress.start();
 
 		$.ajax({
@@ -161,6 +162,34 @@ $("#contact").on("valid invalid submit", function(e){
 		}); // ajax
 	} // valid
 });
+
+//
+
+$("#newsletter-signup").on("valid invalid submit", function(e){
+	var form = $(this);
+	e.stopPropagation();
+	e.preventDefault();
+
+	$('.newsletter-submit').addClass('disabled');
+	NProgress.start();
+
+	$.ajax({
+				type: 'POST',
+				url: form.attr('action'),
+				data: form.serialize(),
+				cache: false,
+				success: function(feedback){
+					//alert(form.serialize());
+					//$('form input, form textarea').prop('disabled', true); // disable the form
+					//$('.checkbox, .radio').removeClass("checked"); // wipe the ticks
+					form[0].reset(); // wipe the form data
+					NProgress.done();
+					alert("Thanks!");
+		} // success
+	}); // ajax
+});
+
+
 
 //-----------------------------------------------------------------
 // +++ HELPERS +++
