@@ -353,7 +353,26 @@
 // Special
 //-----------------------------------------------------------------
 
+// .lv-drop-cap:first-letter {
+// 	float: left;
 
+// 	font-size: 6.250rem;
+// 	line-height: 1;
+
+// 	// margin-right: 0.625em;
+// }
+
+.lv-drop-cap:first-letter {
+	position: relative;
+
+	float: left;
+	color: #CF0F18;
+	font-size: 75px;
+	line-height: 60px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-left: 3px;
+}
 
 // .lv-quote {
 // 	background: url(../img/ui/quotes.svg) no-repeat right top;
@@ -368,6 +387,24 @@
 
 img.round {
 	border-radius: 100%;
+}
+
+.no-touch .anim-spin
+{
+    -webkit-transition: all 0.5s ease;
+    	 -moz-transition: all 0.5s ease;
+    		-o-transition: all 0.5s ease;
+    	  -ms-transition: all 0.5s ease;
+    			transition: all 0.5s ease;
+}
+
+.no-touch .anim-spin:hover
+{
+    -webkit-transform: rotate(360deg);
+    	 -moz-transform: rotate(360deg);
+    		-o-transform: rotate(360deg);
+    	  -ms-transform: rotate(360deg);
+    			transform: rotate(360deg);
 }
 
 //-----------------------------------------------------------------

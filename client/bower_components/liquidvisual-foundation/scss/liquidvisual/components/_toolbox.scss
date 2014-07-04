@@ -107,13 +107,14 @@ $include-snap-grid: true !default;
 // First character in the sentence is pronounced, like in Print.
 //-----------------------------------------------------------------
 
-.lv-drop-cap:first-letter {
-	float: left;
-	color: $primary-color;
-	font-size: 6.250em;
-	line-height: 5.000em;
-	margin-right: 0.625em;
-}
+// .lv-drop-cap:first-letter {
+// 	float: left;
+// 	display: inline-block;
+// 	color: $primary-color;
+// 	font-size: 6.250rem;
+// 	line-height: 5.000em;
+// 	// margin-right: 0.625em;
+// }
 
 //-----------------------------------------------------------------
 // Forms

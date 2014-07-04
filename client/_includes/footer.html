@@ -3,10 +3,10 @@
       <div class="medium-3 columns">
          <!-- Blog Posts -->
          <h3>Site Map</h3>
-         <ul class="medium-block-grid-2 no-bullet site-map">
-               <li><a href="{{site.baseurl}}/"><i class="fi-home"></i> Home</a></li>
+         <ul class="large-block-grid-2 no-bullet site-map">
+               <li><a href="{{site.baseurl}}/"><i class="fi-home show-for-large-up"></i> Home</a></li>
             {% for item in site.data.settings.primary_navigation %}
-               <li><a href="{{ item.url | prepend: site.baseurl }}"><i class="{{ item.icon }}"></i> {{ item.title }}</a></li>
+               <li><a href="{{ item.url | prepend: site.baseurl }}"><i class="{{item.icon}} show-for-large-up"></i> {{ item.title }}</a></li>
             {% endfor %}
          </ul>
       </div> <!-- .medium-4 -->
