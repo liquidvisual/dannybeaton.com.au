@@ -205,7 +205,7 @@
 <section class="section intro-section text-center">
 	<div class="row">
 		<div class="medium-9 medium-centered columns">
-			<form data-abide novalidate id="contact" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/index.php" method="post">
+			<form data-abide novalidate id="contact" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/" method="post">
 	<div class="name-field">
 		<label><!-- Your name <small>required</small> -->
 			<input name="name" type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
@@ -246,7 +246,7 @@
 
 	<div class="row">
 		<div class="large-12 columns">
-			<button type="submit" class="button radius depth flat">Send Message</button>
+			<button type="submit" class="contact-submit button radius depth flat">Send Message</button>
 		</div>
 	</div>
 
@@ -262,7 +262,7 @@
 
 			<!-- FOOTER -->
 			<footer class="footer">
-				<section>
+				<section class="small-only-text-center">
    <div class="row">
       <div class="medium-3 columns">
          <!-- Blog Posts -->
@@ -285,22 +285,31 @@
 
       <div class="medium-5 columns">
          <h3>About the Site</h3>
-         <p>Welcome to the home of new Australian writer Danny Beaton. Please take the time to look around and discover more about the writer and his available and future books.</p>
-         <a class="big-email" href="mailto:contact@dannybeaton.com.au">contact@dannybeaton.com.au</a>
+         <p>Welcome to the home of new Australian author Danny Beaton. Please take the time to look around and discover more about the writer and his current and future books.</p>
+         <p><a class="big-email" href="mailto:contact@dannybeaton.com.au">contact@dannybeaton.com.au</a></p>
       </div>
 
-      <!-- Newsletter Form -->
-      <div class="medium-4 columns">
+      <!-- <div class="medium-4 columns">
          <h3>Signup for our Newsletter</h3>
          <form action="/" method="post">
             <input class="errorX" type="text" name="name" placeholder="Name*" required>
-            <!--<small class="error">Please provide name</small> -->
             <input class="errorX" type="text" name="email" placeholder="Email*" required>
-            <!--<small class="error">Please provide email</small> -->
             <button class="button expand knockout radius" type="submit" name="submit" value="Send Message">Sure, why not.</button>
          </form>
-      </div> <!-- .medium-4 -->
-      <!-- <hr> -->
+      </div> -->
+
+      <div class="medium-4 columns">
+         <h3>Sign up for the Newsletter</h3>
+
+         <!-- Newsletter Form -->
+         <form novalidate id="newsletter-signup" action="http://liquidvisual.net/dannybeaton.com.au/newsletter-signup/" method="post">
+            <input name="name" type="text" placeholder="Your name">
+            <input name="email" type="email" placeholder="Email">
+            <button type="submit" class="newsletter-submit button expand radius depth flat">Sure, why not.</button>
+         </form>
+
+      </div>
+
    </div> <!-- .row -->
 </section>
 

@@ -265,9 +265,20 @@
 	padding-right: 5px;
 }
 
-.footer .button {
+.footer input {
+	background: transparent;
+	background: rgba(89,67,61,0.6);
 	color: white;
-	border-color: white;
+	border: none;
+}
+
+.footer input:focus {
+	color: #222;
+}
+
+.footer .button {
+	// color: white;
+	// border-color: white;
 }
 
 .footer hr
