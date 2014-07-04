@@ -1,44 +1,25 @@
 <section>
    <div class="row">
-      <div class="medium-8 columns">
+      <div class="medium-3 columns">
          <!-- Blog Posts -->
-         <ul class="medium-block-grid-3">
-            <li>
-               <h4>Navigate</h4>
-               <ul>
-
-               {% for item in site.data.settings.primary_navigation %}
-                  <li>{{ item.title }}</li>
-               {% endfor %}
-
-               </ul>
-            </li>
-            <li>
-               <h4>Navigate</h4>
-               <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Author</a></li>
-                  <li><a href="#">Books</a></li>
-                  <li><a href="#">Store</a></li>
-                  <li><a href="#">Contact</a></li>
-               </ul>
-            </li>
-            <li>
-               <h4>Navigate</h4>
-               <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Author</a></li>
-                  <li><a href="#">Books</a></li>
-                  <li><a href="#">Store</a></li>
-                  <li><a href="#">Contact</a></li>
-               </ul>
-            </li>
+         <h3>Site Map</h3>
+         <ul class="medium-block-grid-2 no-bullet site-map">
+               <li><a href="{{site.baseurl}}/"><i class="fi-home"></i> Home</a></li>
+            {% for item in site.data.settings.primary_navigation %}
+               <li><a href="{{ item.url | prepend: site.baseurl }}"><i class="{{ item.icon }}"></i> {{ item.title }}</a></li>
+            {% endfor %}
          </ul>
-      </div> <!-- .medium-8 -->
+      </div> <!-- .medium-4 -->
+
+      <div class="medium-5 columns">
+         <h3>About the Site</h3>
+         <p>Welcome to the home of new Australian writer Danny Beaton. Please take the time to look around and discover more about the writer and his available and future books.</p>
+         <a class="big-email" href="mailto:contact@dannybeaton.com.au">contact@dannybeaton.com.au</a>
+      </div>
 
       <!-- Newsletter Form -->
       <div class="medium-4 columns">
-         <h4>Signup for our Newsletter</h4>
+         <h3>Signup for our Newsletter</h3>
          <form action="/" method="post">
             <input class="errorX" type="text" name="name" placeholder="Name*" required>
             <!--<small class="error">Please provide name</small> -->
