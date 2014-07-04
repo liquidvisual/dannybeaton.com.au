@@ -45,13 +45,14 @@
 		margin-bottom: 50px;
 
 		.lv-topbar-body {
-			padding-left: 230px;
+			padding-left: 165px;
 		}
 
 		.lv-adhoc-overlay .lv-adhoc-logo {
 			position: absolute;
-			bottom: -140px;
+			bottom: -120px;
 			z-index: 1;
+			width: 150px;
 		}
 
 		&:before,
@@ -73,6 +74,17 @@
 		&:after {
 			bottom: -11px;
 			border-bottom: 2px solid #987366;
+		}
+	}
+
+	@media #{$large-up} {
+		.lv-topbar-body {
+			padding-left: 230px;
+		}
+
+		.lv-adhoc-overlay .lv-adhoc-logo {
+			bottom: -140px;
+			width: 203px;
 		}
 	}
 }
@@ -145,6 +157,7 @@
 }
 
 .sell-section {
+	background: #F9D4A6; //#D7E5EE; // url(../img/template/stripe-bg.png);
 	background: #D7E5EE; // url(../img/template/stripe-bg.png);
 	//background: #FDE2C0;//#F7D9B2; //#FDE2C0; //#ECECEA; //url(../img/template/stripe-bg.png);
 	padding: 60px 0 30px 0;
@@ -218,7 +231,7 @@
 	background: #71584F url(../img/template/ground-bg.png);
 	color: #FBEDCC;
 	padding-top: 30px;
-	border-top: 3px solid #F9D4A6;
+	// border-top: 3px solid #F9D4A6;
 }
 
 .footer h1,
@@ -253,7 +266,7 @@
 .legal {
 	// padding: 10px 0;
 	padding-top: 10px;
-	background: #59433D;
+	background: rgba(89,67,61,0.6);
 	// color: #777;
 }
 

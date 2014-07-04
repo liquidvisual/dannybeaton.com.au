@@ -54,8 +54,8 @@ $topbar-background-medium: transparent; //$topbar-secondary-color; // Colors bar
 // Topbar Header
 
 $topbar-height: 44px;
-$topbar-header-logo-border: 8px solid $topbar-secondary-color; // Create "padding" on the logo
-$topbar-header-background: #F7E9CA; //$topbar-secondary-color; // Colors menu bar on small
+$topbar-header-background: #F7E9CA url(../img/template/stripe-bg.png); // Colors menu bar on small
+$topbar-header-logo-border: 3px solid transparent; //$topbar-header-background; // Create "padding" on the logo
 $topbar-header-font-weight: bold;
 $topbar-header-menu-icon-background: $topbar-tertiary-color; // greyish
 

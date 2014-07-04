@@ -60,7 +60,7 @@ $body-font-family: 'Crimson Text', serif, "Helvetica Neue", "Helvetica", Helveti
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #68C1F1; //#B70F0F;
+$primary-color: #38A17C;//#68C1F1; //#B70F0F;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -862,9 +862,9 @@ $label-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $price-title-padding: rem-calc(15 20);
 // $price-title-align: center;
 // $price-title-color: #eee;
-// $price-title-weight: $font-weight-normal;
+$price-title-weight: bold; //$font-weight-normal;
 $price-title-size: rem-calc(26);//rem-calc(16);
-// $price-title-font-family: $body-font-family;
+$price-title-font-family: $header-font-family; //$body-font-family;
 
 // We use these to control the price styles
 // $price-money-bg: #f6f6f6  ;
