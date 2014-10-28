@@ -1,45 +1,54 @@
-<form data-abide novalidate id="contact" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/" method="post">
-	<div class="name-field">
-		<label><!-- Your name <small>required</small> -->
-			<input name="name" type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
-		</label>
-		<small class="error">Name is required and must be a string.</small>
-	</div>
-	<div class="email-field">
-		<label><!-- Email <small>required</small> -->
-			<input name="email" type="email" placeholder="Email*" required>
-		</label>
-		<small class="error">An email address is required.</small>
-	</div>
-	<div class="phone-field">
-		<label><!-- Phone -->
-			<input name="phone" type="text" placeholder="Phone (optional)">
-		</label>
-		<small class="error">Please try again.</small>
-	</div>
-	<div class="referral-field">
-		<label for="customDropdown1"><!-- Budget <small>required</small> -->
-			<select name="referral" id="customDropdown1" class="medium">
-				<option value="">How did you find the site?</option>
-				<option value="Google">Google</option>
-				<option value="Twitter">Twitter</option>
-				<option value="Facebook">Facebook</option>
-				<option value="Friend">Friend</option>
-				<option value="Other">Other</option>
-			</select>
-		</label>
-	</div>
+<form id="contact" data-abide novalidate method="post" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/">
 
+	<!-- Name -->
 	<div class="row">
-		<div class="large-12 columns">
-			<label for="remarks"><!-- Your message <small>required</small> --></label>
-			<textarea rows="10" id="message" name="message" placeholder="Your message*" required></textarea>
+		<div class="columns">
+			<label><!-- Your name <small>required</small> -->
+				<input name="name" class="radius" type="text" placeholder="Your name*">
+			</label>
+			<small class="error">Your name is required.</small>
 		</div>
 	</div>
 
+	<!-- Email -->
 	<div class="row">
-		<div class="large-12 columns">
-			<button type="submit" class="contact-submit button radius depth flat"><i class="icon-envelope-o"></i> Send Message</button>
+		<div class="columns">
+			<label><!-- Email <small>required</small> -->
+				<input name="email" class="radius" type="email" placeholder="Email*" required>
+			</label>
+			<small class="error">A valid email address is required.</small>
+		</div>
+	</div>
+
+	<!-- Referral -->
+	<div class="row">
+		<div class="columns">
+			<label><!-- Budget <small>required</small> -->
+				<select name="referral" class="radius">
+					<option disabled selected>How did you find the site?</option>
+					<option value="Google">Google</option>
+					<option value="Twitter">Twitter</option>
+					<option value="Facebook">Facebook</option>
+					<option value="Friend">Friend</option>
+					<option value="Other">Other</option>
+				</select>
+			</label>
+		</div>
+	</div>
+
+	<!-- Message -->
+	<div class="row">
+		<div class="columns">
+			<label><!-- Your message <small>required</small> --></label>
+			<textarea rows="10" class="radius" name="message" placeholder="Your message*" required></textarea>
+			<small class="error">Please enter a message.</small>
+		</div>
+	</div>
+
+	<!-- Submit -->
+	<div class="row">
+		<div class="columns text-center">
+			<button type="submit" class="contact-submit radius depth flat button">Send Message</button>
 		</div>
 	</div>
 

@@ -50,7 +50,9 @@
 
 		.lv-adhoc-overlay .lv-adhoc-logo {
 			position: absolute;
-			bottom: -120px;
+			// bottom: -120px;
+			top: rem-calc(-30);
+			// bottom: rem-calc(-300);
 			z-index: 1;
 			width: 150px;
 		}
@@ -191,6 +193,17 @@
 // Modules
 //-----------------------------------------------------------------
 
+.lv-super .pricing-table {
+	position: relative;
+	padding-bottom: rem-calc(120);
+
+	.cta-button {
+		position: absolute;
+		bottom: rem-calc(20);
+		width: 100%;
+	}
+}
+
 .pricing-table i.icon-plus,
 .pricing-table i.icon-check {
 	color: #75B449; //green ticks
@@ -214,7 +227,8 @@
 }
 
 .premium-package .title {
-	background: #555;
+	// background: #555;
+	background: #222;
 }
 
 //========================================
@@ -363,6 +377,20 @@
 //-----------------------------------------------------------------
 // Special
 //-----------------------------------------------------------------
+
+.pricing-table {
+	background: white;
+}
+
+
+.color-section {
+	background: lighten(#555555, 50%);
+	padding: rem-calc(50 0);
+}
+
+.button {
+	padding-bottom: rem-calc(9);
+}
 
 // .lv-drop-cap:first-letter {
 // 	float: left;
