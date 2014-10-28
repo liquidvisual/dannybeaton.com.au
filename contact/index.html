@@ -6,29 +6,29 @@
 
 <head>
 	<meta charset="utf-8">
-<meta name="description" content="Danny Beaton is a self published author in Sydney Australia. He writes children's adventure books.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Danny Beaton - New Australian Author | Contact</title>
+	<meta name="description" content="Danny Beaton is a self published author in Sydney Australia. He writes children's adventure books.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Danny Beaton - New Australian Author | Contact</title>
 
-<!-- CDN -->
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600,700,600italic,700italic|Crimson+Text:400,400italic,700italic,700|Coming+Soon' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://i.icomoon.io/public/77d15cfbe3/UntitledProject1/style.css">
+	<!-- CDN -->
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600,700,600italic,700italic|Crimson+Text:400,400italic,700italic,700|Coming+Soon' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://i.icomoon.io/public/77d15cfbe3/UntitledProject1/style.css">
 
-<!-- Dependancies -->
-<link rel="stylesheet" href="http://dannybeaton.com.au/css/foundation.css">
-<link rel="stylesheet" href="http://dannybeaton.com.au/css/liquidvisual.css">
-<link rel="stylesheet" href="http://dannybeaton.com.au/bower_components/foundation-icon-fonts/foundation-icons.css">
-<link rel="stylesheet" href="http://dannybeaton.com.au/bower_components/animate.css/animate.min.css">
+	<!-- Dependancies -->
+	<link rel="stylesheet" href="http://dannybeaton.com.au/css/foundation.css">
+	<link rel="stylesheet" href="http://dannybeaton.com.au/css/liquidvisual.css">
+	<link rel="stylesheet" href="http://dannybeaton.com.au/bower_components/foundation-icon-fonts/foundation-icons.css">
+	<link rel="stylesheet" href="http://dannybeaton.com.au/bower_components/animate.css/animate.min.css">
 
-<!-- App -->
-<link rel="stylesheet" href="http://dannybeaton.com.au/css/main.css">
+	<!-- App -->
+	<link rel="stylesheet" href="http://dannybeaton.com.au/css/main.css">
 
-<!-- Priority Scripts -->
-<script src="http://dannybeaton.com.au/bower_components/modernizr/modernizr.js"></script>
+	<!-- Priority Scripts -->
+	<script src="http://dannybeaton.com.au/bower_components/modernizr/modernizr.js"></script>
 
-<!-- Development Only -->
-<script src="http://localhost:48626/takana.js"></script>
+	<!-- Development Only -->
+	<script src="http://localhost:48626/takana.js"></script>
 </head>
 
 <body>
@@ -104,7 +104,7 @@
     <div class="lv-adhoc-overlay show-for-medium-up">
         <div class="row">
             <div class="columns">
-                 <a class="lv-adhoc-logo" href="http://dannybeaton.com.au"><img width="203" src="http://dannybeaton.com.au/img/content/logo@2x.png" alt="Danny Beaton"></a>
+                 <a class="lv-adhoc-logo" href="http://dannybeaton.com.au"><img width="150" src="http://dannybeaton.com.au/img/content/logo@2x.png" alt="Danny Beaton"></a>
             </div>
         </div>
     </div>
@@ -176,7 +176,7 @@
         </ul>
 
         <ul class="lv-right-for-medium-up show-for-large-up">
-            <li><a class="button radius knockout" href="http://dannybeaton.com.au/store/">Pre-order Book</a></li>
+            <li><a class="button radius knockout" href="http://dannybeaton.com.au/store/">Buy Now</a></li>
         </ul>
     </div> <!-- .lv-topbar-body -->
 
@@ -205,48 +205,57 @@
 <section class="section intro-section text-center">
 	<div class="row">
 		<div class="medium-9 medium-centered columns">
-			<form data-abide novalidate id="contact" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/" method="post">
-	<div class="name-field">
-		<label><!-- Your name <small>required</small> -->
-			<input name="name" type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
-		</label>
-		<small class="error">Name is required and must be a string.</small>
-	</div>
-	<div class="email-field">
-		<label><!-- Email <small>required</small> -->
-			<input name="email" type="email" placeholder="Email*" required>
-		</label>
-		<small class="error">An email address is required.</small>
-	</div>
-	<div class="phone-field">
-		<label><!-- Phone -->
-			<input name="phone" type="text" placeholder="Phone (optional)">
-		</label>
-		<small class="error">Please try again.</small>
-	</div>
-	<div class="referral-field">
-		<label for="customDropdown1"><!-- Budget <small>required</small> -->
-			<select name="referral" id="customDropdown1" class="medium">
-				<option value="">How did you find the site?</option>
-				<option value="Google">Google</option>
-				<option value="Twitter">Twitter</option>
-				<option value="Facebook">Facebook</option>
-				<option value="Friend">Friend</option>
-				<option value="Other">Other</option>
-			</select>
-		</label>
-	</div>
+			<form id="contact" data-abide novalidate method="post" action="http://liquidvisual.net/dannybeaton.com.au/contact-form/">
 
+	<!-- Name -->
 	<div class="row">
-		<div class="large-12 columns">
-			<label for="remarks"><!-- Your message <small>required</small> --></label>
-			<textarea rows="10" id="message" name="message" placeholder="Your message*" required></textarea>
+		<div class="columns">
+			<label><!-- Your name <small>required</small> -->
+				<input name="name" class="radius" type="text" placeholder="Your name*">
+			</label>
+			<small class="error">Your name is required.</small>
 		</div>
 	</div>
 
+	<!-- Email -->
 	<div class="row">
-		<div class="large-12 columns">
-			<button type="submit" class="contact-submit button radius depth flat"><i class="icon-envelope-o"></i> Send Message</button>
+		<div class="columns">
+			<label><!-- Email <small>required</small> -->
+				<input name="email" class="radius" type="email" placeholder="Email*" required>
+			</label>
+			<small class="error">A valid email address is required.</small>
+		</div>
+	</div>
+
+	<!-- Referral -->
+	<div class="row">
+		<div class="columns">
+			<label><!-- Budget <small>required</small> -->
+				<select name="referral" class="radius">
+					<option disabled selected>How did you find the site?</option>
+					<option value="Google">Google</option>
+					<option value="Twitter">Twitter</option>
+					<option value="Facebook">Facebook</option>
+					<option value="Friend">Friend</option>
+					<option value="Other">Other</option>
+				</select>
+			</label>
+		</div>
+	</div>
+
+	<!-- Message -->
+	<div class="row">
+		<div class="columns">
+			<label><!-- Your message <small>required</small> --></label>
+			<textarea rows="10" class="radius" name="message" placeholder="Your message*" required></textarea>
+			<small class="error">Please enter a message.</small>
+		</div>
+	</div>
+
+	<!-- Submit -->
+	<div class="row">
+		<div class="columns text-center">
+			<button type="submit" class="contact-submit radius depth flat button">Send Message</button>
 		</div>
 	</div>
 
@@ -303,8 +312,8 @@
 
          <!-- Newsletter Form -->
          <form novalidate id="newsletter-signup" action="http://liquidvisual.net/dannybeaton.com.au/newsletter-signup/" method="post">
-            <input name="name" type="text" placeholder="Your name">
-            <input name="email" type="email" placeholder="Email">
+            <input class="radius" name="name" type="text" placeholder="Your name">
+            <input class="radius" name="email" type="email" placeholder="Email">
             <button type="submit" class="newsletter-submit button expand radius depth flat">Sure, why not.</button>
          </form>
 
