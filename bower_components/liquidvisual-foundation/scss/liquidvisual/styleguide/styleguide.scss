@@ -1,0 +1,227 @@
+@import "../../foundation/settings";
+/*
+	LIQUIDVISUAL STYLEGUIDE :: A Personal Framework
+
+	- updated: 07.07.14
+	- liquidvisual.com
+	- licensed under MIT Open Source
+
+	- Notes -
+
+	- Styles for the liquidvisual styleguide
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$include-sg-section-styles: true !default;
+$body-bg: #ECEEF1;
+$line-color: #ddd !default;
+
+$tertiary-color: #2F3437 !default;
+$quaternary-color: #EDF1F3 !default;
+$quinary-color: #FFFE57 !default;
+
+//-----------------------------------------------------------------
+// Body
+//-----------------------------------------------------------------
+
+.body-sg {
+	// background: #EFF1F4;
+	// background: #ECEEF1;
+	// background: #FAF4F1;
+	// background: #EEEEEE;
+	// background: #27272F;
+	background: $body-bg;
+
+	& hr {
+		background-color: $body-bg;
+		border-color: #D4D6D8;
+	}
+}
+
+//-----------------------------------------------------------------
+// Sections
+//-----------------------------------------------------------------
+
+@if $include-sg-section-styles {
+	.sg-section {
+		// border: 1px solid #e1e1e1;
+		border-radius: 10px;
+		padding: 20px 30px;
+		background: white;
+		box-shadow: 0 2px 5px -4px #313131;
+		margin-bottom: 1.875rem;
+	}
+
+	.sg-section .example {
+		border: none;
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.sg-alphabet h1,
+.sg-alphabet h2 {
+	line-height: 1.2;
+}
+
+.sg-alphabet h1 {
+	font-size: 4rem;
+}
+
+.sg-alphabet h2 {
+	font-size: 2.8rem;
+}
+
+.sg-alphabet h4 {
+	color: $primary-color
+}
+
+//-----------------------------------------------------------------
+// Color Swatches
+//-----------------------------------------------------------------
+
+.sg-swatch {
+	background: white;
+	padding: 7px;
+	border-radius: 6px;
+	// border: 1px solid #e1e1e1;
+	box-shadow: 0 2px 5px -4px #313131;
+}
+
+.sg-swatch-color {
+	position: relative;
+	// background: #EF2163;
+	display: block;
+	height: 100px;
+}
+
+.sg-swatch-primary .sg-swatch-color { background: $primary-color; }
+.sg-swatch-secondary .sg-swatch-color { background: $secondary-color; }
+.sg-swatch-tertiary .sg-swatch-color { background: $tertiary-color; }
+.sg-swatch-quaternary .sg-swatch-color { background: $quaternary-color; }
+.sg-swatch-quinary .sg-swatch-color { background: $quinary-color; }
+.sg-swatch-alert .sg-swatch-color { background: $alert-color; }
+.sg-swatch-success .sg-swatch-color { background: $success-color; }
+.sg-swatch-warning .sg-swatch-color { background: $warning-color; }
+.sg-swatch-info .sg-swatch-color { background: $info-color; }
+.sg-swatch-bg .sg-swatch-color { background: $body-bg; }
+.sg-swatch-line .sg-swatch-color { background: $line-color; }
+
+.sg-swatch-color-mini-1,
+.sg-swatch-color-mini-2,
+.sg-swatch-color-mini-3 {
+	display: block;
+	width: 20%;
+	position: absolute;
+	right: 0;
+}
+
+.sg-swatch-color-mini-1 {
+	background: #F13580;
+	top: 0;
+	height: 33.3333333%;
+}
+
+.sg-swatch-primary .sg-swatch-color-mini-1  { background: darken($primary-color, 5%); }
+.sg-swatch-secondary .sg-swatch-color-mini-1  { background: darken($secondary-color, 5%); }
+.sg-swatch-tertiary .sg-swatch-color-mini-1  { background: darken($tertiary-color, 5%); }
+.sg-swatch-quaternary .sg-swatch-color-mini-1  { background: darken($quaternary-color, 5%); }
+.sg-swatch-quinary .sg-swatch-color-mini-1  { background: darken($quinary-color, 5%); }
+.sg-swatch-alert .sg-swatch-color-mini-1  { background: darken($alert-color, 5%); }
+.sg-swatch-success .sg-swatch-color-mini-1  { background: darken($success-color, 5%); }
+.sg-swatch-warning .sg-swatch-color-mini-1  { background: darken($warning-color, 5%); }
+.sg-swatch-info .sg-swatch-color-mini-1  { background: darken($info-color, 5%); }
+.sg-swatch-bg .sg-swatch-color-mini-1  { background: darken($body-bg, 5%); }
+.sg-swatch-line .sg-swatch-color-mini-1  { background: darken($line-color, 5%); }
+
+.sg-swatch-color-mini-2 {
+	background: #F24C8D;
+	top: 33.3333333%;
+	height: 33.3333333%;
+}
+
+.sg-swatch-primary .sg-swatch-color-mini-2  { background: darken($primary-color, 10%); }
+.sg-swatch-secondary .sg-swatch-color-mini-2  { background: darken($secondary-color, 10%); }
+.sg-swatch-tertiary .sg-swatch-color-mini-2  { background: darken($tertiary-color, 10%); }
+.sg-swatch-quaternary .sg-swatch-color-mini-2  { background: darken($quaternary-color, 10%); }
+.sg-swatch-quinary .sg-swatch-color-mini-2  { background: darken($quinary-color, 10%); }
+.sg-swatch-alert .sg-swatch-color-mini-2  { background: darken($alert-color, 10%); }
+.sg-swatch-success .sg-swatch-color-mini-2  { background: darken($success-color, 10%); }
+.sg-swatch-warning .sg-swatch-color-mini-2  { background: darken($warning-color, 10%); }
+.sg-swatch-info .sg-swatch-color-mini-2  { background: darken($info-color, 10%); }
+.sg-swatch-bg .sg-swatch-color-mini-2  { background: darken($body-bg, 10%); }
+.sg-swatch-line .sg-swatch-color-mini-2  { background: darken($line-color, 10%); }
+
+.sg-swatch-color-mini-3 {
+	background: #F35A95;
+	top: 66.6666666%;
+	height: 33.3333333%;
+}
+
+.sg-swatch-primary .sg-swatch-color-mini-3  { background: darken($primary-color, 15%); }
+.sg-swatch-secondary .sg-swatch-color-mini-3  { background: darken($secondary-color, 15%); }
+.sg-swatch-tertiary .sg-swatch-color-mini-3  { background: darken($tertiary-color, 15%); }
+.sg-swatch-quaternary .sg-swatch-color-mini-3  { background: darken($quaternary-color, 15%); }
+.sg-swatch-quinary .sg-swatch-color-mini-3  { background: darken($quinary-color, 15%); }
+
+.sg-swatch-alert .sg-swatch-color-mini-3  { background: darken($alert-color, 15%); }
+.sg-swatch-success .sg-swatch-color-mini-3  { background: darken($success-color, 15%); }
+.sg-swatch-warning .sg-swatch-color-mini-3  { background: darken($warning-color, 15%); }
+.sg-swatch-info .sg-swatch-color-mini-3  { background: darken($info-color, 15%); }
+.sg-swatch-bg .sg-swatch-color-mini-3  { background: darken($body-bg, 15%); }
+.sg-swatch-line .sg-swatch-color-mini-3  { background: darken($line-color, 15%); }
+
+.sg-swatch .text {
+	font-size: 1em;
+	text-align: center;
+	display: block;
+	line-height: 1;
+	padding: 10px 0 5px 0;
+}
+
+//-----------------------------------------------------------------
+// Headings
+//-----------------------------------------------------------------
+
+.sg-heading {
+	margin-bottom: 1.250rem;
+}
+
+//-----------------------------------------------------------------
+// Headings
+//-----------------------------------------------------------------
+
+pre {
+	position: relative;
+	padding-top: 30px;
+}
+
+.language-markup {
+	background: none;
+}
+
+pre[rel=HTML]:before,
+pre[rel=CSS]:before,
+pre[rel=JavaScript]:before,
+pre[rel=Django]:before
+{
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	content: attr(rel);
+	width: 100%;
+	background: #555555;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+// pre.collapsed pre {
+// 	max-height: 200px;
+// }

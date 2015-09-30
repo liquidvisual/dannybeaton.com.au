@@ -1,7 +1,7 @@
 {
   "name"            : "wow",
   "title"           : "WOW",
-  "version"         : "0.1.9",
+  "version"         : "1.1.2",
   "description" : "",
   "keywords": [],
   "homepage"        : "",
@@ -15,8 +15,7 @@
     "url"  : "git://github.com/matthieua/WOW.git"
   },
   "bugs" : {
-    "url" : "https://github.com/matthieua/WOW/issues",
-    "url": "https://github.com/matthieua/WOW/blob/master/LICENSE-MIT"
+    "url" : "https://github.com/matthieua/WOW/issues"
   },
   "licenses": [{
     "type": "MIT",

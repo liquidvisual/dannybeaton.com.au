@@ -1,11 +1,25 @@
 describe 'WOW', ->
 
+  # Supress warnings:
+  window.console =
+    warn: ->
+
   # Time to wait after each scroll event:
   # (This should be >= the interval used by the plugin.)
   timeout = 100
 
   # Height of the PhantomJS window:
   winHeight = 300
+
+  describe 'smoke test', ->
+
+    it 'exists', ->
+      expect WOW
+        .toBeDefined()
+
+    it "has an 'init' method", ->
+      expect new WOW().init
+        .toBeDefined()
 
   describe 'simple test environment', ->
 
@@ -51,21 +65,13 @@ describe 'WOW', ->
       expect style.color
         .toBe 'red'
 
-  describe 'library smoke test', ->
-
-    it 'exists', ->
-      expect WOW
-        .toBeDefined()
-
-    it "has an 'init' method", ->
-      expect new WOW().init
-        .toBeDefined()
-
   describe 'library behaviour', ->
+
+    wow = null
 
     beforeEach (done) ->
       loadFixtures 'simple.html'
-      new WOW().init()
+      (wow = new WOW).init()
       setTimeout ->
         done()
       , timeout
@@ -116,7 +122,7 @@ describe 'WOW', ->
       , timeout
 
     it 'does not tamper with the style attribute', (done) ->
-      # Scroll down so that 150px of #simple-4 becomes visible.
+      # Scroll down so that 150px of #simple-5 becomes visible.
       window.scrollTo 0, $('#simple-5').offset().top - winHeight + 150
       setTimeout ->
         expect $ '#simple-5'
@@ -127,6 +133,41 @@ describe 'WOW', ->
           .toBe 'yellow'
         expect $('#simple-5')[0].style.color
           .toBe 'red'
+        done()
+      , timeout
+
+    it 'works with asynchronously loaded content', (done) ->
+      $ '#simple'
+        .append $ '<div/>',
+          id: 'simple-6'
+          class: 'wow'
+      wow.sync()
+      # Scroll down so that 150px of #simple-6 becomes visible.
+      window.scrollTo 0, $('#simple-6').offset().top - winHeight + 150
+      setTimeout ->
+        expect $ '#simple-6'
+          .toHaveClass 'animated'
+        expect $('#simple-6').css 'visibility'
+          .toBe 'visible'
+        done()
+      , timeout
+
+    it 'works with asynchronously loaded nested content', (done) ->
+      $ '#simple'
+        .append $ '<div/>'
+        .children()
+        .first()
+        .append $ '<div/>',
+          id: 'simple-7'
+          class: 'wow'
+      wow.sync()
+      # Scroll down so that 150px of #simple-7 becomes visible.
+      window.scrollTo 0, $('#simple-7').offset().top - winHeight + 150
+      setTimeout ->
+        expect $ '#simple-7'
+          .toHaveClass 'animated'
+        expect $('#simple-7').css 'visibility'
+          .toBe 'visible'
         done()
       , timeout
 
@@ -164,16 +205,43 @@ describe 'WOW', ->
 
   describe 'library behaviour with custom settings', ->
 
+    called = false
+
     beforeEach (done) ->
+      called = false
       loadFixtures 'custom.html'
       new WOW
         boxClass:     'block'
         animateClass: 'fancy'
         offset:       10
+        callback:     ->
+          called = true
       .init()
+
+      # Trigger custom event on dom object, event name is boxClass value
+      $('.block').on 'block', ->
+        $(this).addClass('triggered')
+
       setTimeout ->
         done()
       , timeout
+
+    it "creates two instances of the WOW.js with different configs", ->
+      wow1 = new WOW
+        boxClass:     'block1'
+        animateClass: 'fancy1'
+        offset:       10
+      wow2 = new WOW
+        boxClass:     'block2'
+        animateClass: 'fancy2'
+        offset:       20
+
+      expect wow1.config.boxClass
+        .toBe "block1"
+      expect wow1.config.animateClass
+        .toBe "fancy1"
+      expect wow1.config.offset
+        .toBe 10
 
     it "does not touch elements that don't have the marker class", (done) ->
       # Scroll down so that 15px of #custom-1 becomes visible.
@@ -232,6 +300,35 @@ describe 'WOW', ->
             .toBe '2s'
           expect $('#custom-4')[0].style.webkitAnimationDelay
             .toBe '1s'
+          done()
+        , timeout
+      , timeout
+
+    it "fires the callback", (done) ->
+      called = false  # reset
+      # Scroll down so that 150px of #custom-3 becomes visible.
+      window.scrollTo 0, $('#custom-3').offset().top - winHeight + 150
+      setTimeout ->
+        expect called
+          .toBe true
+        done()
+      , timeout
+
+    it 'fires the callback on the visible element', (done) ->
+      # Scroll down so that 150px of #custom-3 becomes visible.
+      window.scrollTo 0, $('#custom-3').offset().top - winHeight + 150
+      setTimeout ->
+        expect $ '#custom-3'
+          .toHaveClass 'triggered'
+        expect $ '#custom-4'
+          .not.toHaveClass 'triggered'
+        # Scroll down so that 150px of #custom-4 becomes visible.
+        window.scrollTo 0, $('#custom-4').offset().top - winHeight + 150
+        setTimeout ->
+          expect $ '#custom-3'
+            .toHaveClass 'triggered'
+          expect $ '#custom-4'
+            .toHaveClass 'triggered'
           done()
         , timeout
       , timeout
