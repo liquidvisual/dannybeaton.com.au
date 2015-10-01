@@ -1,0 +1,464 @@
+@import "foundation/settings";
+/*
+    MAIN.CSS
+
+    - Last updated: 02.07.14
+    - liquidvisual.com
+    - Licensed under MIT Open Source
+*/
+//-----------------------------------------------------------------
+// lv-super: top-most non-visual wrapper | lv-page: visual wrapper
+//-----------------------------------------------------------------
+
+.lv-page {
+	padding-top: 44px;
+// display: none;
+	@media #{$medium-up} {
+		padding-top: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+}
+
+//-----------------------------------------------------------------
+// Header
+//-----------------------------------------------------------------
+
+.header {
+	position: absolute;
+	margin-top: 15px;
+	width: 100%;
+	z-index: 100;
+}
+
+//-----------------------------------------------------------------
+// Navigation
+//-----------------------------------------------------------------
+
+.navigation {
+	font-family: 'Coming Soon', cursive;
+	background: url(../img/template/stripe-bg.png);
+	background-color: #FBECCA;
+
+	@media #{$medium-up} {
+		position: relative;
+		border-top: 3px solid #987366;
+		border-bottom: 3px solid #987366;
+		margin-bottom: 50px;
+
+		.lv-topbar-body {
+			padding-left: 165px;
+		}
+
+		.lv-adhoc-overlay .lv-adhoc-logo {
+			position: absolute;
+			// bottom: -120px;
+			top: rem-calc(-30);
+			// bottom: rem-calc(-300);
+			z-index: 1;
+			width: 150px;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			width: 100%;
+			height: 8px;
+			background: #F9D3A4;
+			position: absolute;
+			left: 0;
+		}
+
+		&:before {
+			top: -11px;
+			border-top: 2px solid #987366;
+			// box-shadow: -50px 1px 1px red;
+		}
+
+		&:after {
+			bottom: -11px;
+			border-bottom: 2px solid #987366;
+		}
+	}
+
+	@media #{$large-up} {
+		.lv-topbar-body {
+			padding-left: 230px;
+		}
+
+		.lv-adhoc-overlay .lv-adhoc-logo {
+			bottom: -140px;
+			width: 203px;
+		}
+	}
+}
+
+.img-icon {
+	margin-bottom: 5px;
+}
+
+.navigation .node-icon {
+	// background: #F9DBB2;
+	// border-radius: 100%;
+	// padding: 8px;
+}
+
+//-----------------------------------------------------------------
+// Banner
+//-----------------------------------------------------------------
+
+.banner {
+	position: relative;
+	margin-bottom: rem-calc(20);
+
+	@media #{$medium-up} {
+	    margin-bottom: 0;
+	}
+}
+
+.banner img {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	line-height: 0;
+
+	vertical-align: bottom !important;
+}
+
+.lv-hero-caption-row {
+	// position: absolute;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+}
+
+.lv-hero-caption {
+	display: block; /* prevent tiny bottom gap on mobile */
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.lv-hero-caption-text {
+	padding-top: 30px;
+
+	@media #{$medium-up} {
+		padding-top: 60px;
+		padding-bottom: 30px;
+	}
+}
+
+//-----------------------------------------------------------------
+// Sections
+//-----------------------------------------------------------------
+
+.section {
+	margin-bottom: 40px;
+}
+
+.author-section {
+	// background: url(../img/template/pen-illustration@2x.png) no-repeat right 110%;
+	// background-size: 140px;
+	// padding-bottom: 60px;
+	// margin: 0;
+}
+
+.testimonials-section {
+	font-family: 'Coming Soon', cursive;
+}
+
+.sell-section {
+	background: #F9D4A6; //#D7E5EE; // url(../img/template/stripe-bg.png);
+	background: #D7E5EE; // url(../img/template/stripe-bg.png);
+	//background: #FDE2C0;//#F7D9B2; //#FDE2C0; //#ECECEA; //url(../img/template/stripe-bg.png);
+	padding: 60px 0 30px 0;
+	// color: #987367;
+	// border-top: 1px solid #987367;
+	// border-bottom: 1px solid #987367;
+}
+
+.sell-section .button {
+	// background: white;
+	// border: 0;
+}
+
+.sell-section .subheader {
+	// color: #FBEDCC;
+}
+
+@media #{$medium-up} {
+	.testimonials-section li:first-child blockquote {
+		border-left: 0;
+	}
+}
+
+//-----------------------------------------------------------------
+// Content
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Sidebar
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Modules
+//-----------------------------------------------------------------
+
+.lv-super .pricing-table {
+	position: relative;
+	padding-bottom: rem-calc(120);
+
+	.cta-button {
+		position: absolute;
+		bottom: rem-calc(20);
+		width: 100%;
+	}
+}
+
+.pricing-table i.icon-plus,
+.pricing-table i.icon-check {
+	color: #75B449; //green ticks
+}
+
+.pricing-table .title {
+	border-radius: $global-radius $global-radius 0 0;
+}
+
+.pricing-table {
+	border-radius: $global-radius;
+	// box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.26);
+}
+
+.digital-package .title {
+	background: #63BFF1;
+}
+
+.book-package .title {
+	background: #EC734D;
+}
+
+.premium-package .title {
+	// background: #555;
+	background: #222;
+}
+
+//========================================
+// Modules - Promo Tiles
+//========================================
+//-----------------------------------------------------------------
+// Footer
+//-----------------------------------------------------------------
+
+.footer
+{
+	position: relative;
+	// background: #977367;
+	background: #71584F url(../img/template/ground-bg.png);
+	color: #FBEDCC;
+	padding-top: 30px;
+	// border-top: 3px solid #F9D4A6;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6
+{
+	color: white;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer .big-email {
+	font-size: 1.5rem;
+}
+
+.footer .site-map {
+	font-size: 1.2rem;
+}
+
+.footer p {
+	font-size: 1.2rem;
+}
+
+.footer .site-map i {
+	color: #4E3D36;
+	padding-right: 5px;
+}
+
+.footer input {
+	background: transparent;
+	background: rgba(89,67,61,0.6);
+	color: white;
+	border: none;
+}
+
+.footer input:focus {
+	color: #222;
+}
+
+.footer .button {
+	// color: white;
+	// border-color: white;
+}
+
+.footer hr
+{
+	border-color: #F9D4A6;
+	margin: 0 15px 10px 15px;
+}
+
+//========================================
+// Footer - Legal
+//========================================
+
+.legal {
+	// padding: 10px 0;
+	padding-top: 10px;
+	background: rgba(89,67,61,0.6);
+	// color: #777;
+}
+
+.legal p {
+	font-size: 0.8rem;
+
+	@media #{$medium-up} {
+		margin-bottom: 0;
+	}
+}
+
+.legal small {
+	font-size: 0.7rem;
+}
+
+//-----------------------------------------------------------------
+// Social Networks
+//-----------------------------------------------------------------
+
+.social-networks li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.social-networks li a {
+	display: block;
+	padding: 0px 5px;
+	text-align: center;
+}
+
+.header .social-networks li a {
+	background-color: #987367;
+	color: white;
+	border-radius: 30px;
+	border: 2px solid #FFF5CF;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+}
+
+//========================================
+// Contexts
+//========================================
+//-----------------------------------------------------------------
+// Template Buttons
+//-----------------------------------------------------------------
+
+.navigation .button {
+	margin: 17px 15px 0 0;
+	text-transform: uppercase;
+	border-color: #987367;
+	color: #987367;
+	// font-size: 1.2rem;
+	// line-height: 30px;
+}
+
+//-----------------------------------------------------------------
+// Forms
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Tooltips
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Animations
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Special
+//-----------------------------------------------------------------
+
+.pricing-table {
+	background: white;
+}
+
+
+.color-section {
+	background: lighten(#555555, 50%);
+	padding: rem-calc(50 0);
+}
+
+.button {
+	padding-bottom: rem-calc(9);
+}
+
+// .lv-drop-cap:first-letter {
+// 	float: left;
+
+// 	font-size: 6.250rem;
+// 	line-height: 1;
+
+// 	// margin-right: 0.625em;
+// }
+
+.lv-drop-cap:first-letter {
+	position: relative;
+
+	float: left;
+	color: #CF0F18;
+	font-size: 75px;
+	line-height: 60px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-left: 3px;
+	margin: 0;
+}
+
+// .lv-quote {
+// 	background: url(../img/ui/quotes.svg) no-repeat right top;
+// 	background-size: 90px;
+// 	padding-right: 100px;
+// 	text-align: left;
+// }
+
+.primary-color {
+	// color: $primary-color;
+}
+
+img.round {
+	border-radius: 100%;
+}
+
+.no-touch .anim-spin
+{
+    -webkit-transition: all 0.5s ease;
+    	 -moz-transition: all 0.5s ease;
+    		-o-transition: all 0.5s ease;
+    	  -ms-transition: all 0.5s ease;
+    			transition: all 0.5s ease;
+}
+
+.no-touch .anim-spin:hover
+{
+    -webkit-transform: rotate(360deg);
+    	 -moz-transform: rotate(360deg);
+    		-o-transform: rotate(360deg);
+    	  -ms-transform: rotate(360deg);
+    			transform: rotate(360deg);
+}
+
+//-----------------------------------------------------------------
+// Themes
+//-----------------------------------------------------------------
+//========================================
+//
+//========================================

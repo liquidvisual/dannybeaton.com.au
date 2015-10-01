@@ -1,4 +1,4 @@
-Liquid Visual Foundation (pre-alpha)
+Liquid Visual Foundation (WIP)
 ----
 
 LVF is a personal codebase of mine, with a trusted collection of libraries used across many professional projects.

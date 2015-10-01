@@ -1,4 +1,4 @@
-# WOW.js [![Build Status](https://secure.travis-ci.org/matthieua/WOW.png?branch=master)](http://travis-ci.org/matthieua/WOW)
+# WOW.js [![Build Status](https://secure.travis-ci.org/matthieua/WOW.svg?branch=master)](http://travis-ci.org/matthieua/WOW)
 
 Reveal CSS animation as you scroll down a page.
 By default, you can use it to trigger [animate.css](https://github.com/daneden/animate.css) animations.
@@ -10,21 +10,20 @@ Advantages:
 - Fast execution and lightweight code: the browser will like it ;-)
 - You can change the settings - [see below](#advanced-usage)
 
-Follow [@mattaussaguel](http://twitter.com/mattaussaguel) for updates as WOW evolves.
+Follow [@mattaussaguel](//twitter.com/mattaussaguel) for updates as WOW evolves.
 
 ### [LIVE DEMO ➫](http://mynameismatthieu.com/WOW/)
 
 ## Live examples
-
+- [MaterialUp](http://www.materialup.com)
 - [Fliplingo](https://www.fliplingo.com)
 - [Streamline Icons](http://www.streamlineicons.com)
-- [NastyIcons](http://www.nastyicons.com)
 - [Microsoft Stories](http://www.microsoft.com/en-us/news/stories/garage/)
 
 
 ## Version
 
-0.1.9
+1.1.2
 
 ## Documentation
 
@@ -66,11 +65,28 @@ var wow = new WOW(
     boxClass:     'wow',      // animated element css class (default is wow)
     animateClass: 'animated', // animation css class (default is animated)
     offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       true        // trigger animations on mobile devices (true is default)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    }
   }
 );
 wow.init();
 ```
+
+### Asynchronous content support
+
+In IE 10+, Chrome 18+ and Firefox 14+, animations will be automatically
+triggered for any DOM nodes you add after calling `wow.init()`. If you do not
+like that, you can disable this by setting `live` to `false`.
+
+If you want to support older browsers (e.g. IE9+), as a fallback, you can call
+the `wow.sync()` method after you have added new DOM elements to animate (but
+`live` should still be set to `true`). Calling `wow.sync()` has no side
+effects.
+
 
 ## Contribute
 
@@ -100,13 +116,14 @@ If you find a bug, please report it [here on Github](https://github.com/matthieu
 
 Developed by Matthieu Aussaguel, [mynameismatthieu.com](http://mynameismatthieu.com)
 
-+ [@mattaussaguel](http://twitter.com/mattaussaguel)
-+ [Github Profile](http://github.com/matthieua)
++ [@mattaussaguel](//twitter.com/mattaussaguel)
++ [Github Profile](//github.com/matthieua)
 
 ## Contributors
 
 Thanks to everyone who has contributed to the project so far:
 
-- Attila Oláh - [@attilaolah](http://twitter.com/attilaolah) - [Github Profile](http://github.com/attilaolah)
+- Attila Oláh - [@attilaolah](//twitter.com/attilaolah) - [Github Profile](//github.com/attilaolah)
+- [and many others](//github.com/matthieua/WOW/graphs/contributors)
 
-Initiated and designed by [Vincent Le Moign](http://www.webalys.com/), [@webalys](https://twitter.com/webalys)
+Initiated and designed by [Vincent Le Moign](//www.webalys.com/), [@webalys](//twitter.com/webalys)

@@ -11,11 +11,11 @@
 	<title>Liquid Visual :: Buttons</title>
 	<base href="../">
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="libs/foundation/css/foundation.css">
+	<link rel="stylesheet" href="css/foundation.css">
 	<link rel="stylesheet" href="libs/foundation-icon-fonts/foundation-icons.css">
 	<link rel="stylesheet" href="libs/animate.css/animate.min.css">
 	<link rel="stylesheet" href="css/liquidvisual.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/styleguide.css">
 	<!-- Priority Scripts -->
 	<script src="libs/modernizr/modernizr.js"></script>
 	<script src="http://localhost:48626/takana.js"></script>
@@ -25,7 +25,7 @@
 		<div class="lv-page">
 			<div class="row">
 				<div class="medium-6 columns">
-					<h2>Buttons</h2>
+					<h1>Buttons</h1>
 					<br>
 					<p>This is the default <a href="http://foundation.zurb.com/docs/components/buttons.html">Foundation button</a>.</p>
 					<p><a href="#lv" class="button">Button</a></p>
@@ -63,7 +63,7 @@
 					<p>Buttons can be <code>.disabled</code> <span class="label round success">Extended</span> </p>
 					<p><a href="#lv" class="button radius disabled">Disabled</a></p>
 
-					<p>Buttons can be <code>.success</code> / <code>.alert</code> / <code>.secondary</code>. <br>Caution: these styles won't yet work with special styles below.</p>
+					<p>Buttons can be <code>.success</code> / <code>.alert</code> / <code>.secondary</code>.</p>
 					<p><a href="#lv" class="button radius success">Success</a> <a href="#lv" class="button radius alert">Alert</a> <a href="#lv" class="button secondary radius">Secondary</a></p>
 				</div>
 			</div>
@@ -135,6 +135,13 @@
 			<script src="js/liquidvisual/liquidvisual.topbar.js"></script>
 			<script src="js/main.js"></script>
 			<script>$(document).foundation();</script>
+
+			<script>
+				$(".button").click(function(e){
+					e.preventDefault();
+					return false;
+				});
+			</script>
 
 			<!-- No Javascript Warning -->
 			<noscript>

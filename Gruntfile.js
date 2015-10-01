@@ -11,9 +11,9 @@ module.exports = function (grunt) {
       // Configure Paths
       //-----------------------------------------------------
       config: {
-         app: 'client',
+         app: 'src',
          dist: 'dist',
-         port: '9000',
+         port: '9292',
          takanaOn: false, // see notes in 'Watch'
          git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
       },
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
    grunt.registerTask('deploy', [
       'shell:jekyllBuild',
       'sass:dist',
-      'buildcontrol:master',
+      // 'buildcontrol:master',
       'buildcontrol:pages'
    ]);
 

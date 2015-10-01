@@ -1,8 +1,19 @@
 (function() {
   describe('WOW', function() {
     var timeout, winHeight;
+    window.console = {
+      warn: function() {}
+    };
     timeout = 100;
     winHeight = 300;
+    describe('smoke test', function() {
+      it('exists', function() {
+        return expect(WOW).toBeDefined();
+      });
+      return it("has an 'init' method", function() {
+        return expect(new WOW().init).toBeDefined();
+      });
+    });
     describe('simple test environment', function() {
       beforeEach(function() {
         return loadFixtures('simple.html');
@@ -31,18 +42,12 @@
         return expect(style.color).toBe('red');
       });
     });
-    describe('library smoke test', function() {
-      it('exists', function() {
-        return expect(WOW).toBeDefined();
-      });
-      return it("has an 'init' method", function() {
-        return expect(new WOW().init).toBeDefined();
-      });
-    });
     describe('library behaviour', function() {
+      var wow;
+      wow = null;
       beforeEach(function(done) {
         loadFixtures('simple.html');
-        new WOW().init();
+        (wow = new WOW).init();
         return setTimeout(function() {
           return done();
         }, timeout);
@@ -76,13 +81,39 @@
           }, timeout);
         }, timeout);
       });
-      return it('does not tamper with the style attribute', function(done) {
+      it('does not tamper with the style attribute', function(done) {
         window.scrollTo(0, $('#simple-5').offset().top - winHeight + 150);
         return setTimeout(function() {
           expect($('#simple-5')).toHaveClass('animated');
           expect($('#simple-5').css('visibility')).toBe('visible');
           expect($('#simple-5')[0].style.background).toBe('yellow');
           expect($('#simple-5')[0].style.color).toBe('red');
+          return done();
+        }, timeout);
+      });
+      it('works with asynchronously loaded content', function(done) {
+        $('#simple').append($('<div/>', {
+          id: 'simple-6',
+          "class": 'wow'
+        }));
+        wow.sync();
+        window.scrollTo(0, $('#simple-6').offset().top - winHeight + 150);
+        return setTimeout(function() {
+          expect($('#simple-6')).toHaveClass('animated');
+          expect($('#simple-6').css('visibility')).toBe('visible');
+          return done();
+        }, timeout);
+      });
+      return it('works with asynchronously loaded nested content', function(done) {
+        $('#simple').append($('<div/>')).children().first().append($('<div/>', {
+          id: 'simple-7',
+          "class": 'wow'
+        }));
+        wow.sync();
+        window.scrollTo(0, $('#simple-7').offset().top - winHeight + 150);
+        return setTimeout(function() {
+          expect($('#simple-7')).toHaveClass('animated');
+          expect($('#simple-7').css('visibility')).toBe('visible');
           return done();
         }, timeout);
       });
@@ -109,16 +140,41 @@
       });
     });
     return describe('library behaviour with custom settings', function() {
+      var called;
+      called = false;
       beforeEach(function(done) {
+        called = false;
         loadFixtures('custom.html');
         new WOW({
           boxClass: 'block',
           animateClass: 'fancy',
-          offset: 10
+          offset: 10,
+          callback: function() {
+            return called = true;
+          }
         }).init();
+        $('.block').on('block', function() {
+          return $(this).addClass('triggered');
+        });
         return setTimeout(function() {
           return done();
         }, timeout);
+      });
+      it("creates two instances of the WOW.js with different configs", function() {
+        var wow1, wow2;
+        wow1 = new WOW({
+          boxClass: 'block1',
+          animateClass: 'fancy1',
+          offset: 10
+        });
+        wow2 = new WOW({
+          boxClass: 'block2',
+          animateClass: 'fancy2',
+          offset: 20
+        });
+        expect(wow1.config.boxClass).toBe("block1");
+        expect(wow1.config.animateClass).toBe("fancy1");
+        return expect(wow1.config.offset).toBe(10);
       });
       it("does not touch elements that don't have the marker class", function(done) {
         window.scrollTo(0, $('#custom-1').offset().top - winHeight + 15);
@@ -143,7 +199,7 @@
         expect($('#custom-3')).not.toHaveClass('fancy');
         return expect($('#custom-4')).not.toHaveClass('fancy');
       });
-      return it('animates elements after scrolling down and they become visible', function(done) {
+      it('animates elements after scrolling down and they become visible', function(done) {
         window.scrollTo(0, $('#custom-3').offset().top - winHeight + 150);
         return setTimeout(function() {
           expect($('#custom-3')).toHaveClass('fancy');
@@ -157,6 +213,27 @@
             expect($('#custom-4')[0].style.webkitAnimationIterationCount).toBe('infinite');
             expect($('#custom-4')[0].style.webkitAnimationDuration).toBe('2s');
             expect($('#custom-4')[0].style.webkitAnimationDelay).toBe('1s');
+            return done();
+          }, timeout);
+        }, timeout);
+      });
+      it("fires the callback", function(done) {
+        called = false;
+        window.scrollTo(0, $('#custom-3').offset().top - winHeight + 150);
+        return setTimeout(function() {
+          expect(called).toBe(true);
+          return done();
+        }, timeout);
+      });
+      return it('fires the callback on the visible element', function(done) {
+        window.scrollTo(0, $('#custom-3').offset().top - winHeight + 150);
+        return setTimeout(function() {
+          expect($('#custom-3')).toHaveClass('triggered');
+          expect($('#custom-4')).not.toHaveClass('triggered');
+          window.scrollTo(0, $('#custom-4').offset().top - winHeight + 150);
+          return setTimeout(function() {
+            expect($('#custom-3')).toHaveClass('triggered');
+            expect($('#custom-4')).toHaveClass('triggered');
             return done();
           }, timeout);
         }, timeout);

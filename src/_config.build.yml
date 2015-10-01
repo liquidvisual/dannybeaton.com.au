@@ -1,0 +1,5 @@
+# Site settings for GIT deployment
+baseurl: "http://dannybeaton.com.au"
+build: build
+
+#http://liquidvisual.github.io/dannybeaton.com.au

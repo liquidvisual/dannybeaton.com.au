@@ -69,16 +69,21 @@ module.exports = function(grunt) {
     },
     jekyll: {
       dev: {
-        src: 'website',
-        dest: '_site',
-        url: 'local',
-        raw: jekyllConfig + "url: local"
+        options: {
+          src: 'website',
+          dest: '_site',
+          url: 'local',
+          raw: jekyllConfig + "url: local"
+        }
       },
       production: {
-        src: 'website',
-        dest: '_production',
-        url: 'production',
-        raw: jekyllConfig + "url: production"
+        options: {
+          src: 'website',
+          dest: '_production',
+          url: 'production',
+          raw: jekyllConfig + "url: production"
+        }
+        
       }
     },
 
@@ -134,8 +139,18 @@ module.exports = function(grunt) {
     var files = this.data.src,
         includes = grunt.option('mfp-exclude'),
         basePath = this.data.basePath,
-        newContents = this.data.banner + ";(function($) {\n";
-
+        newContents = this.data.banner + ";(function (factory) { \n" +
+            "if (typeof define === 'function' && define.amd) { \n" +
+            " // AMD. Register as an anonymous module. \n" + 
+            " define(['jquery'], factory); \n" + 
+            " } else if (typeof exports === 'object') { \n" +
+            " // Node/CommonJS \n" +
+            " factory(require('jquery')); \n" +
+            " } else { \n" +
+            " // Browser globals \n" +
+            " factory(window.jQuery || window.Zepto); \n" +
+            " } \n" +
+            " }(function($) { \n";
 
     if(includes) {
       includes = includes.split(/[\s,]+/); // 'a,b,c' => ['a','b','c']
@@ -169,7 +184,7 @@ module.exports = function(grunt) {
       newContents += grunt.file.read( basePath + name + '.js' ) + '\n';
       newContents += "\n/*>>"+name+"*/\n"; 
     });
-    newContents+= " _checkInstance(); })(window.jQuery || window.Zepto);";
+    newContents+= " _checkInstance(); }));";
 
     grunt.file.write( this.data.dest, newContents );
   });

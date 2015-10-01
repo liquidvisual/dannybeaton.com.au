@@ -1,0 +1,10 @@
+# Site settings
+name: Danny Beaton
+title: Danny Beaton
+email: author@dannybeaton.com.au
+description: "Site description goes here"
+mode: dev
+
+# Build settings
+markdown: kramdown
+permalink: pretty

@@ -1,0 +1,7 @@
+# Configure Homepage Banners here
+
+ - title: "Mal Winter <br>and the<br> Cloud Runners"
+   description: Pre-order Today
+   img_path: "/img/content/clouds-bg.jpg"
+   link_url: ""
+   link_label: ""
