@@ -15,7 +15,8 @@ module.exports = function (grunt) {
          dist: 'dist',
          port: '9292',
          takanaOn: false, // see notes in 'Watch'
-         git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
+         // git: 'git@github.com:liquidvisual/dannybeaton.com.au.git'
+         git: 'https://github.com/liquidvisual/dannybeaton.com.au.git'
       },
       //-----------------------------------------------------
       // TAKANA - live Sass refreshing
